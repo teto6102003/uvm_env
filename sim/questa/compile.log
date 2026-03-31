@@ -1,0 +1,259 @@
+Reading pref.tcl
+
+# 2021.2_1
+
+# do compile_linux.tcl
+# 
+# ---------------- CREATE WORK LIBRARY ------------------------
+# if {![file exists "work"]} {
+#     vlib work
+# }
+# vmap work work
+# QuestaSim-64 vmap 2021.2_1 Lib Mapping Utility 2021.05 May 15 2021
+# vmap work work 
+# Modifying modelsim.ini
+# 
+# ---------------- SET PATHS ----------------------------------
+# set VORTEX_ROOT  "$env(HOME)/Vortex-UVM-GP/Vortex"
+# /home/ahmad_sudky/Vortex-UVM-GP/Vortex
+# set UVM_ROOT     "$env(HOME)/Vortex-UVM-GP/vortex_uvm_env"
+# /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env
+# set TB_ROOT      "$UVM_ROOT/tb"
+# /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb
+# set ENV_ROOT     "$UVM_ROOT/uvm_env"
+# /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env
+# set AGENT_ROOT   "$ENV_ROOT/agents"
+# /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents
+# set TEST_ROOT    "$UVM_ROOT/uvm_tests"
+# /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_tests
+# set UVM_HOME     "$env(UVM_HOME)"
+# /home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src
+# 
+# Headers are in tb/ (VX_config.vh, VX_define.vh, etc.)
+# UVM_HOME added so uvm_macros.svh is found by all files
+# set INC "+incdir+$TB_ROOT +incdir+$ENV_ROOT +incdir+$AGENT_ROOT +incdir+$UVM_HOME"
+# +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents +incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src
+# 
+# puts "============================================================="
+=============================================================
+# puts " Paths:"
+ Paths:
+# puts "   VORTEX_ROOT : $VORTEX_ROOT"
+   VORTEX_ROOT : /home/ahmad_sudky/Vortex-UVM-GP/Vortex
+# puts "   UVM_ROOT    : $UVM_ROOT"
+   UVM_ROOT    : /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env
+# puts "   TB_ROOT     : $TB_ROOT"
+   TB_ROOT     : /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb
+# puts "   UVM_HOME    : $UVM_HOME"
+   UVM_HOME    : /home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src
+# puts "============================================================="
+=============================================================
+# 
+# ---------------- 1. UVM PACKAGE -----------------------------
+# puts "\n--- Step 1: Compiling UVM package ---"
+
+--- Step 1: Compiling UVM package ---
+# vlog -sv -suppress 2167 \
+#     +incdir+$UVM_HOME \
+#     $UVM_HOME/uvm_pkg.sv
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:14:34 on Mar 16,2026
+# vlog -sv -suppress 2167 "+incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src" /home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src/uvm_pkg.sv 
+# -- Compiling package uvm_pkg (uvm-1.2 Built-in)
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:14:36 on Mar 16,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# 
+# ---------------- 2. CONFIG PACKAGE -------------------------
+# Must come before interfaces - interfaces import vortex_config_pkg
+# puts "\n--- Step 2: Compiling config package ---"
+
+--- Step 2: Compiling config package ---
+# vlog -sv $INC \
+#     $ENV_ROOT/vortex_config.sv
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:14:36 on Mar 16,2026
+# vlog -sv "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents +incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src" /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_config.sv 
+# -- Compiling package vortex_config_pkg
+# -- Importing package uvm_pkg (uvm-1.2 Built-in)
+# ** Warning: /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_config.sv(253): (vlog-13335) Non-LRM compliant 'real' type for rand variable 'CLK_PERIOD_NS' may require 'svrnm' license feature during simulation.
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:14:40 on Mar 16,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 1
+# 
+# ---------------- 3. TB INTERFACES --------------------------
+# puts "\n--- Step 3: Compiling TB interfaces ---"
+
+--- Step 3: Compiling TB interfaces ---
+# vlog -sv $INC \
+#     $TB_ROOT/VX_config.vh \
+#     $TB_ROOT/VX_define.vh \
+#     $TB_ROOT/VX_platform.vh \
+#     $TB_ROOT/VX_types.vh \
+#     $TB_ROOT/vortex_mem_if.sv \
+#     $TB_ROOT/vortex_axi_if.sv \
+#     $TB_ROOT/vortex_dcr_if.sv \
+#     $TB_ROOT/vortex_status_if.sv \
+#     $TB_ROOT/vortex_if.sv
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:14:40 on Mar 16,2026
+# vlog -sv "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents +incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src" /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb/VX_config.vh /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb/VX_define.vh /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb/VX_platform.vh /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb/VX_types.vh /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb/vortex_mem_if.sv /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb/vortex_axi_if.sv /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb/vortex_dcr_if.sv /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb/vortex_status_if.sv /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb/vortex_if.sv 
+# -- Compiling package vortex_mem_if_sv_unit
+# -- Importing package vortex_config_pkg
+# -- Importing package uvm_pkg (uvm-1.2 Built-in)
+# -- Compiling interface vortex_mem_if
+# -- Compiling interface vortex_axi_if
+# -- Compiling package vortex_dcr_if_sv_unit
+# -- Compiling interface vortex_dcr_if
+# -- Compiling interface vortex_status_if
+# -- Compiling interface vortex_if
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:14:42 on Mar 16,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# 
+# ---------------- 4. AGENT PACKAGES -------------------------
+# Each agent uses `include inside its package file to pull in all components.
+# Compile ONLY the package file - do NOT compile individual files separately
+# as they are already included by the package and would cause circular errors.
+# 
+# puts "\n--- Step 4a: mem_agent ---"
+
+--- Step 4a: mem_agent ---
+# vlog -sv $INC \
+#     +incdir+$AGENT_ROOT/mem_agent \
+#     $AGENT_ROOT/mem_agent/mem_agent_pkg.sv
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:14:42 on Mar 16,2026
+# vlog -sv "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents +incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src" "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/mem_agent" /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/mem_agent/mem_agent_pkg.sv 
+# -- Compiling package mem_agent_pkg
+# -- Importing package uvm_pkg (uvm-1.2 Built-in)
+# -- Importing package vortex_config_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:14:43 on Mar 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# puts "\n--- Step 4b: axi_agent ---"
+
+--- Step 4b: axi_agent ---
+# vlog -sv $INC \
+#     +incdir+$AGENT_ROOT/axi_agent \
+#     $AGENT_ROOT/axi_agent/axi_agent_pkg.sv
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:14:43 on Mar 16,2026
+# vlog -sv "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents +incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src" "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/axi_agent" /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/axi_agent/axi_agent_pkg.sv 
+# -- Compiling package axi_agent_pkg
+# -- Importing package uvm_pkg (uvm-1.2 Built-in)
+# -- Importing package vortex_config_pkg
+# ** Warning: /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/axi_agent/axi_monitor.sv(274): (vlog-2240) Treating stand-alone use of function 'pop_front' as an implicit VOID cast.
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:14:44 on Mar 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# 
+# puts "\n--- Step 4c: dcr_agent ---"
+
+--- Step 4c: dcr_agent ---
+# vlog -sv $INC \
+#     +incdir+$AGENT_ROOT/dcr_agent \
+#     $AGENT_ROOT/dcr_agent/dcr_agent_pkg.sv
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:14:44 on Mar 16,2026
+# vlog -sv "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents +incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src" "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/dcr_agent" /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/dcr_agent/dcr_agent_pkg.sv 
+# -- Compiling package dcr_agent_pkg
+# -- Importing package uvm_pkg (uvm-1.2 Built-in)
+# -- Importing package vortex_config_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:14:45 on Mar 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# puts "\n--- Step 4d: host_agent ---"
+
+--- Step 4d: host_agent ---
+# vlog -sv $INC \
+#     +incdir+$AGENT_ROOT/host_agent \
+#     $AGENT_ROOT/host_agent/host_agent_pkg.sv
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:14:45 on Mar 16,2026
+# vlog -sv "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents +incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src" "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/host_agent" /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/host_agent/host_agent_pkg.sv 
+# -- Compiling package host_agent_pkg
+# -- Importing package uvm_pkg (uvm-1.2 Built-in)
+# -- Importing package vortex_config_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:14:46 on Mar 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# puts "\n--- Step 4e: status_agent ---"
+
+--- Step 4e: status_agent ---
+# vlog -sv $INC \
+#     +incdir+$AGENT_ROOT/status_agent \
+#     $AGENT_ROOT/status_agent/status_agent_pkg.sv
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:14:46 on Mar 16,2026
+# vlog -sv "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents +incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src" "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/status_agent" /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/status_agent/status_agent_pkg.sv 
+# -- Compiling package status_agent_pkg
+# -- Importing package uvm_pkg (uvm-1.2 Built-in)
+# -- Importing package vortex_config_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:14:47 on Mar 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# ---------------- 5. UVM ENV COMPONENTS ---------------------
+# vortex_env_pkg.sv uses `include to pull in all env components
+# (virtual_sequencer, scoreboard, coverage_collector, env).
+# Compile ONLY the package file - same pattern as agent packages.
+# puts "\n--- Step 5: Compiling UVM env package ---"
+
+--- Step 5: Compiling UVM env package ---
+# vlog -sv $INC \
+#     +incdir+$ENV_ROOT \
+#     $ENV_ROOT/vortex_env_pkg.sv
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:14:47 on Mar 16,2026
+# vlog -sv "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/tb +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env +incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents +incdir+/home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src" "+incdir+/home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env" /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_env_pkg.sv 
+# -- Compiling package vortex_env_pkg
+# -- Importing package uvm_pkg (uvm-1.2 Built-in)
+# -- Importing package vortex_config_pkg
+# -- Importing package mem_agent_pkg
+# -- Importing package axi_agent_pkg
+# -- Importing package dcr_agent_pkg
+# -- Importing package host_agent_pkg
+# -- Importing package status_agent_pkg
+# ** Error: /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(380): (vlog-60) Construction of embedded covergroup (defined in a class) is not supported except in constructor 'new()' of covergroup's parent class
+# ** Error (suppressible): /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(380): (vlog-13266) No actual value has been specified for a formal argument '#parent_arg#' that does not have a default value.
+# ** Error: /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(381): (vlog-60) Construction of embedded covergroup (defined in a class) is not supported except in constructor 'new()' of covergroup's parent class
+# ** Error (suppressible): /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(381): (vlog-13266) No actual value has been specified for a formal argument '#parent_arg#' that does not have a default value.
+# ** Error: /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(382): (vlog-60) Construction of embedded covergroup (defined in a class) is not supported except in constructor 'new()' of covergroup's parent class
+# ** Error (suppressible): /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(382): (vlog-13266) No actual value has been specified for a formal argument '#parent_arg#' that does not have a default value.
+# ** Error: /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(383): (vlog-60) Construction of embedded covergroup (defined in a class) is not supported except in constructor 'new()' of covergroup's parent class
+# ** Error (suppressible): /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(383): (vlog-13266) No actual value has been specified for a formal argument '#parent_arg#' that does not have a default value.
+# ** Error: /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(384): (vlog-60) Construction of embedded covergroup (defined in a class) is not supported except in constructor 'new()' of covergroup's parent class
+# ** Error (suppressible): /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_coverage_collector.sv(384): (vlog-13266) No actual value has been specified for a formal argument '#parent_arg#' that does not have a default value.
+# ** Error (suppressible): (vlog-13276) /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_env.sv(199): Could not find field/method name (ap) in 'm_axi_agent' of 'm_axi_agent.ap.connect'.
+# ** Error (suppressible): (vlog-13276) /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_env.sv(199): Could not find field/method name (ap) in 'm_axi_agent' of 'm_axi_agent.ap.connect.$0'.
+# ** Error (suppressible): (vlog-13276) /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_env.sv(199): Could not find field/method name (ap) in 'm_axi_agent' of 'm_axi_agent.ap.connect.$0'.
+# End time: 14:14:48 on Mar 16,2026, Elapsed time: 0:00:01
+# Errors: 13, Warnings: 0
+# ** Error: /home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/linux_x86_64/vlog failed.
+# Error in macro ./compile_linux.tcl line 109
+# /home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -sv $INC \
+#     +incdir+$ENV_ROOT \
+#     $ENV_ROOT/vortex_env_pkg.sv"
+QuestaSim> 

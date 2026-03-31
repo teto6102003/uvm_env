@@ -1,0 +1,2 @@
+  CREATE_STREAM @545000 {NAME:dcr_seq T:Transactions SCOPE:uvm_test_top.env.m_dcr_agent.m_sequencer STREAM:1256}
+  CREATE_STREAM @545000 {NAME:dcr_seq T:Transactions SCOPE:uvm_test_top.env.m_dcr_agent.m_sequencer STREAM:1521}

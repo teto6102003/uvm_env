@@ -1,0 +1,36 @@
+QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+Start time: 18:41:12 on Mar 16,2026
+vlog -sv -f uvm_env.flist 
+-- Compiling package vortex_config_pkg
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+** Warning: /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/vortex_config.sv(253): (vlog-13335) Non-LRM compliant 'real' type for rand variable 'CLK_PERIOD_NS' may require 'svrnm' license feature during simulation.
+-- Compiling package vortex_mem_if_sv_unit
+-- Importing package vortex_config_pkg
+-- Compiling interface vortex_mem_if
+-- Compiling interface vortex_axi_if
+-- Compiling package vortex_dcr_if_sv_unit
+-- Compiling interface vortex_dcr_if
+-- Compiling interface vortex_status_if
+-- Compiling interface vortex_if
+-- Compiling package mem_model_sv_unit
+-- Compiling package mem_agent_pkg
+-- Compiling package axi_agent_pkg
+** Warning: /home/ahmad_sudky/Vortex-UVM-GP/vortex_uvm_env/uvm_env/agents/axi_agent/axi_monitor.sv(274): (vlog-2240) Treating stand-alone use of function 'pop_front' as an implicit VOID cast.
+-- Compiling package dcr_agent_pkg
+-- Compiling package host_agent_pkg
+-- Compiling package status_agent_pkg
+-- Compiling package vortex_env_pkg
+-- Importing package mem_agent_pkg
+-- Importing package axi_agent_pkg
+-- Importing package dcr_agent_pkg
+-- Importing package host_agent_pkg
+-- Importing package status_agent_pkg
+-- Compiling package vortex_test_pkg
+-- Importing package vortex_env_pkg
+-- Compiling module vortex_tb_top
+-- Importing package vortex_test_pkg
+
+Top level modules:
+	vortex_tb_top
+End time: 18:41:14 on Mar 16,2026, Elapsed time: 0:00:02
+Errors: 0, Warnings: 2

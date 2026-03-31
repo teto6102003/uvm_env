@@ -1,0 +1,16 @@
+Reading pref.tcl
+
+# 2021.2_1
+
+# vsim -c work.vortex_tb_top "+UVM_TESTNAME=vortex_sanity_test" "+UVM_VERBOSITY=UVM_LOW" -sv_seed random -sv_lib /home/ahmad_sudky/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi -do "run -all; quit -f" 
+# Start time: 23:31:46 on Mar 16,2026
+# Loading /tmp/ahmad_sudky@DESKTOP-BGD68AP_dpi_4365/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: /home/ahmad_sudky/Vortex-UVM-GP/Vortex/hw/rtl/fpu/VX_fpu_unit.sv(189): Module 'VX_fpu_dsp' is not defined.
+#  For instance 'fpu_dsp' at path 'vortex_tb_top.dut.g_clusters[0].cluster.g_sockets[0].socket.g_cores[0].core.execute.fpu_unit.g_blocks'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+Error loading design
+# End time: 23:31:51 on Mar 16,2026, Elapsed time: 0:00:05
+# Errors: 1, Warnings: 0

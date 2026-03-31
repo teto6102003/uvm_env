@@ -1,0 +1,1429 @@
+# vsim -c vortex_tb_top "+UVM_TESTNAME=vortex_smoke_test" "+NUM_CLUSTERS=1" "+NUM_CORES=1" "+NUM_WARPS=4" "+NUM_THREADS=4" "+TIMEOUT=1000000" "+STARTUP_ADDR=80000000" "+USE_AXI_WRAPPER" "+PROGRAM=/home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex" "+WAVE=/home/stev_teto_22/vortex_uvm/results/20260330/run_183603_vortex_smoke_test/waves/vortex_smoke_test_axi.vcd" -sv_lib /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi -do "run -all; quit -f" 
+# Start time: 18:36:10 on Mar 30,2026
+# Loading /tmp/stev_teto_22@stevteto_dpi_15484/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /home/stev_teto_22/vortex/hw/rtl/tcu/VX_tcu_uops.sv(27): (vopt-13314) Defaulting port 'ibuf_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/hw/rtl/core/VX_csr_unit.sv(24): (vopt-13314) Defaulting port 'base_dcrs' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/hw/rtl/core/VX_csr_data.sv(41): (vopt-13314) Defaulting port 'base_dcrs' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_classifier.sv(22): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_fma.sv(31): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_fmt_slice.sv(36): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_block.sv(38): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_block.sv(39): (vopt-13314) Defaulting port 'is_boxed_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_divsqrt_multi.sv(33): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_divsqrt_multi.sv(34): (vopt-13314) Defaulting port 'is_boxed_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_multifmt_slice.sv(40): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_multifmt_slice.sv(41): (vopt-13314) Defaulting port 'is_boxed_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_block.sv(38): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_block.sv(39): (vopt-13314) Defaulting port 'is_boxed_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_classifier.sv(22): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_noncomp.sv(31): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_fmt_slice.sv(36): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_block.sv(38): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_block.sv(39): (vopt-13314) Defaulting port 'is_boxed_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_classifier.sv(22): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_multifmt_slice.sv(40): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_multifmt_slice.sv(41): (vopt-13314) Defaulting port 'is_boxed_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_block.sv(38): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_opgroup_block.sv(39): (vopt-13314) Defaulting port 'is_boxed_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/third_party/cvfpu/src/fpnew_top.sv(34): (vopt-13314) Defaulting port 'operands_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/hw/rtl/core/VX_split_join.sv(24): (vopt-13314) Defaulting port 'split' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/hw/rtl/core/VX_split_join.sv(25): (vopt-13314) Defaulting port 'sjoin' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/hw/rtl/core/VX_schedule.sv(28): (vopt-13314) Defaulting port 'base_dcrs' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_config.sv(232): (vopt-13335) Non-LRM compliant 'real' type for rand variable 'CLK_PERIOD_NS' may require 'svrnm' license feature during simulation.
+# ** Warning: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_config.sv(402): (vopt-13337) Non-LRM compliant 'real' type expression in random constraint may require 'svrnm' license feature during simulation.
+# ** Warning: /home/stev_teto_22/vortex_uvm/uvm_env/agents/axi_agent/axi_monitor.sv(274): (vopt-2240) Treating stand-alone use of function 'pop_front' as an implicit VOID cast.
+# ** Warning: /home/stev_teto_22/vortex/hw/rtl/core/VX_sfu_unit.sv(28): (vopt-13314) Defaulting port 'base_dcrs' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/stev_teto_22/vortex/hw/rtl/core/VX_execute.sv(30): (vopt-13314) Defaulting port 'base_dcrs' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=33.
+# //  Questa Sim-64
+# //  Version 2021.2_1 linux_x86_64 May 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Loading sv_std.std
+# Loading work.VX_gpu_pkg(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.vortex_config_pkg(fast)
+# Loading work.vortex_dcr_if_sv_unit(fast)
+# Loading work.vortex_mem_if_sv_unit(fast)
+# Loading work.vortex_if_sv_unit(fast)
+# Loading work.vortex_if(fast)
+# Loading work.vortex_status_if(fast)
+# Loading work.status_agent_pkg(fast)
+# Loading work.vortex_mem_if(fast)
+# Loading work.vortex_dcr_if(fast)
+# Loading work.host_agent_pkg(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fseek'.
+#    Time: 0 ns  Iteration: 0  Region: /host_agent_pkg::host_transaction::load_program_from_file File: /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_transaction.sv Line: 175
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fseek'.
+#    Time: 0 ns  Iteration: 0  Region: /host_agent_pkg::host_transaction::load_program_from_file File: /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_transaction.sv Line: 177
+# Loading work.dcr_agent_pkg(fast)
+# Loading work.vortex_axi_if(fast)
+# Loading work.axi_agent_pkg(fast)
+# Loading work.mem_agent_pkg(fast)
+# Loading work.vortex_env_pkg(fast)
+# Loading work.vortex_test_pkg(fast)
+# Loading work.vortex_tb_top(fast)
+# Loading work.VX_cache_wrap(fast)
+# Loading work.VX_cache_bypass(fast)
+# Loading work.VX_mem_switch(fast)
+# Loading work.VX_mem_arb(fast)
+# Loading work.VX_cluster(fast)
+# Loading work.VX_cache_wrap(fast__1)
+# Loading work.VX_cache_bypass(fast__1)
+# Loading work.VX_mem_switch(fast__1)
+# Loading work.VX_socket(fast)
+# Loading work.VX_cache_cluster(fast)
+# Loading work.VX_mem_arb(fast__1)
+# Loading work.VX_cache_wrap(fast__2)
+# Loading work.VX_cache(fast)
+# Loading work.VX_cache_init(fast)
+# Loading work.VX_elastic_buffer(fast__5)
+# Loading work.VX_elastic_buffer(fast__8)
+# Loading work.VX_elastic_buffer(fast__10)
+# Loading work.VX_mem_arb(fast__2)
+# Loading work.VX_cache_cluster(fast__1)
+# Loading work.VX_mem_arb(fast__3)
+# Loading work.VX_cache_wrap(fast__3)
+# Loading work.VX_cache_bypass(fast__2)
+# Loading work.VX_mem_switch(fast__2)
+# Loading work.VX_mem_arb(fast__4)
+# Loading work.VX_bits_remove(fast)
+# Loading work.VX_mem_arb(fast__5)
+# Loading work.VX_bits_insert(fast__1)
+# Loading work.VX_bits_remove(fast__1)
+# Loading work.VX_cache(fast__1)
+# Loading work.VX_cache_init(fast__1)
+# Loading work.VX_elastic_buffer(fast__18)
+# Loading work.VX_elastic_buffer(fast__20)
+# Loading work.VX_elastic_buffer(fast__21)
+# Loading work.VX_mem_arb(fast__6)
+# Loading work.VX_mem_arb(fast__7)
+# Loading work.VX_bits_insert(fast__2)
+# Loading work.VX_bits_remove(fast__2)
+# Loading work.VX_core(fast)
+# Loading work.VX_schedule(fast)
+# Loading work.VX_elastic_buffer(fast__26)
+# Loading work.VX_fetch(fast)
+# Loading work.VX_dp_ram(fast__6)
+# Loading work.VX_elastic_buffer(fast__27)
+# Loading work.VX_decode(fast)
+# Loading work.VX_elastic_buffer(fast__28)
+# Loading work.VX_issue(fast)
+# Loading work.VX_issue_slice(fast)
+# Loading work.VX_ibuffer(fast)
+# Loading work.VX_elastic_buffer(fast__29)
+# Loading work.VX_tcu_pkg(fast)
+# Loading work.VX_uop_sequencer(fast)
+# Loading work.VX_scoreboard(fast)
+# Loading work.VX_stream_arb(fast__15)
+# Loading work.VX_operands(fast)
+# Loading work.VX_opc_unit(fast)
+# Loading work.VX_nz_iterator(fast)
+# Loading work.VX_dp_ram(fast__8)
+# Loading work.VX_elastic_buffer(fast__32)
+# Loading work.VX_dispatch(fast)
+# Loading work.VX_elastic_buffer(fast__34)
+# Loading work.VX_fpu_pkg(fast)
+# Loading work.VX_execute(fast)
+# Loading work.VX_alu_unit(fast)
+# Loading work.VX_dispatch_unit(fast)
+# Loading work.VX_elastic_buffer(fast__35)
+# Loading work.VX_pe_switch(fast)
+# Loading work.VX_alu_int(fast)
+# Loading work.VX_priority_encoder(fast__4)
+# Loading work.VX_elastic_buffer(fast__37)
+# Loading work.VX_pipe_register(fast__11)
+# Loading work.VX_alu_muldiv(fast)
+# Loading work.VX_shift_register(fast__13)
+# Loading work.VX_stream_arb(fast__19)
+# Loading work.VX_gather_unit(fast)
+# Loading work.VX_elastic_buffer(fast__39)
+# Loading work.VX_lsu_unit(fast)
+# Loading work.VX_dispatch_unit(fast__1)
+# Loading work.VX_lsu_slice(fast)
+# Loading work.VX_elastic_buffer(fast__43)
+# Loading work.VX_elastic_buffer(fast__44)
+# Loading work.VX_stream_arb(fast__20)
+# Loading work.VX_gather_unit(fast__1)
+# Loading work.VX_elastic_buffer(fast__45)
+# Loading work.VX_fpu_unit(fast)
+# Loading work.VX_dispatch_unit(fast__2)
+# Loading work.VX_index_buffer(fast__1)
+# Loading work.defs_div_sqrt_mvp(fast)
+# Loading work.cf_math_pkg(fast)
+# Loading work.fpnew_pkg(fast)
+# Loading work.VX_fpu_fpnew(fast)
+# Loading work.norm_div_sqrt_mvp_sv_unit(fast)
+# Loading work.control_mvp_sv_unit(fast)
+# Loading work.nrbd_nrsc_mvp_sv_unit(fast)
+# Loading work.preprocess_mvp_sv_unit(fast)
+# Loading work.div_sqrt_top_mvp_sv_unit(fast)
+# Loading work.fpnew_top(fast)
+# Loading work.rr_arb_tree(fast)
+# Loading work.rr_arb_tree(fast__1)
+# Loading work.rr_arb_tree(fast__2)
+# Loading work.rr_arb_tree(fast__3)
+# Loading work.rr_arb_tree(fast__4)
+# Loading work.VX_pipe_register(fast__13)
+# Loading work.VX_elastic_buffer(fast__47)
+# Loading work.VX_gather_unit(fast__2)
+# Loading work.VX_tcu_unit(fast)
+# Loading work.VX_dispatch_unit(fast__3)
+# Loading work.VX_pe_switch(fast__1)
+# Loading work.VX_tcu_fp(fast)
+# Loading work.VX_tcu_fedp_bhf(fast)
+# Loading work.VX_tcu_int(fast)
+# Loading work.VX_gather_unit(fast__3)
+# Loading work.VX_sfu_unit(fast)
+# Loading work.VX_dispatch_unit(fast__4)
+# Loading work.VX_pe_switch(fast__2)
+# Loading work.VX_wctl_unit(fast)
+# Loading work.VX_elastic_buffer(fast__48)
+# Loading work.VX_pipe_register(fast__27)
+# Loading work.VX_csr_unit(fast)
+# Loading work.VX_csr_data(fast)
+# Loading work.VX_gather_unit(fast__4)
+# Loading work.VX_commit(fast)
+# Loading work.VX_pipe_register(fast__30)
+# Loading work.VX_mem_unit(fast)
+# Loading work.VX_lmem_switch(fast)
+# Loading work.VX_elastic_buffer(fast__50)
+# Loading work.VX_stream_arb(fast__22)
+# Loading work.VX_lsu_mem_arb(fast)
+# Loading work.VX_lsu_adapter(fast)
+# Loading work.VX_stream_unpack(fast)
+# Loading work.VX_stream_pack(fast)
+# Loading work.VX_local_mem(fast)
+# Loading work.VX_mem_coalescer(fast)
+# Loading work.VX_lsu_adapter(fast__1)
+# Loading work.VX_stream_unpack(fast__1)
+# Loading work.VX_stream_pack(fast__1)
+# Compiling /tmp/stev_teto_22@stevteto_dpi_15484/linux_x86_64_gcc-7.4.0/exportwrapper.c
+# Compiling /tmp/stev_teto_22@stevteto_dpi_15484/linux_x86_64_gcc-11/exportwrapper.c
+# Loading /tmp/stev_teto_22@stevteto_dpi_15484/linux_x86_64_gcc-11/vsim_auto_compile.so
+# Loading /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_init' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_cleanup' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_write_mem' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_write_mem' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_read_mem' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_read_mem' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_load_bin' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_load_hex' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_dcr_write' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_run' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_step' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_is_done' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_get_exitcode' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_init_exit_code_register' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'dpi_trace' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /VX_tcu_pkg File: /home/stev_teto_22/vortex/hw/rtl/tcu/VX_tcu_pkg.sv
+# run -all
+# UVM_INFO /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# ================================================================================
+# VORTEX INTERFACE INITIALIZED
+# ================================================================================
+# Sub-interfaces instantiated:
+#   - vortex_axi_if    ADDR=32 DATA=512 ID=8
+#   - vortex_mem_if    ADDR=26 DATA=512 TAG=8
+#   - vortex_dcr_if    ADDR=12 DATA=32
+#   - vortex_status_if (Status and performance monitoring)
+# All interfaces use clocking blocks for race-free operation
+# ================================================================================
+# [TB_TOP @ 0] Program file: /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex
+# [TB_TOP @ 0] Custom timeout: 1000000 cycles
+# [TB_TOP @ 0] Waveform output: /home/stev_teto_22/vortex_uvm/results/20260330/run_183603_vortex_smoke_test/waves/vortex_smoke_test_axi.vcd
+# [TB_TOP @ 0] Waveforms: vsim.wlf (Questa)
+# CONFIGS: num_threads=4, num_warps=4, num_cores=1, num_clusters=1, socket_size=1, local_mem_base=0xffff0000, num_barriers=2
+# [TB_TOP @ 0] DUT: Vortex_axi AXI_TID_W=8
+# ================================================================================
+# [TB_TOP @ 0] Vortex GPGPU UVM Testbench Initialized
+# ================================================================================
+# [TB_TOP @ 0] Memory model created
+# [TB_TOP @ 0] Virtual interfaces registered in UVM config DB
+# [TB_TOP @ 0] Starting UVM test phase...
+# ================================================================================
+# UVM_INFO @ 0: reporter [RNTST] Running test vortex_smoke_test...
+# [TB_TOP @ 0] Timeout watchdog armed (1000000 cycles)
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_base_test.sv(58) @ 0: uvm_test_top [vortex_smoke_test] Building test...
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_base_test.sv(65) @ 0: uvm_test_top [vortex_smoke_test] DEBUG cfg after plusargs: cores=1 warps=4 threads=4 str=1CL_1C_4W_4T_RV32_ F_AXI
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(92) @ 0: uvm_test_top [vortex_smoke_test] Smoke test cfg: cores=1 warps=4 threads=4 startup=0x0000000080000000 timeout=1000000 iface=     AXI4
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(52) @ 0: uvm_test_top [vortex_smoke_test] Building smoke test (TB_TOP DCR Edition)...
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(127) @ 0: uvm_test_top.env [VORTEX_ENV] axi_agent created
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(132) @ 0: uvm_test_top.env [VORTEX_ENV] dcr_agent created
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(137) @ 0: uvm_test_top.env [VORTEX_ENV] host_agent created
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(142) @ 0: uvm_test_top.env [VORTEX_ENV] status_agent created (always PASSIVE)
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(151) @ 0: uvm_test_top.env [VORTEX_ENV] Virtual sequencer created
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(159) @ 0: uvm_test_top.env [VORTEX_ENV] Scoreboard created
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(171) @ 0: uvm_test_top.env [VORTEX_ENV] Coverage collector created
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/axi_agent/axi_driver.sv(108) @ 0: uvm_test_top.env.m_axi_agent.m_driver [AXI_DRV] Driver configured: ID_WIDTH=8 (256 IDs), Write serialization= ON
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/dcr_agent/dcr_agent.sv(104) @ 0: uvm_test_top.env.m_dcr_agent [DCR_AGENT] DCR agent set to passive per config
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(230) @ 0: uvm_test_top.env [VORTEX_ENV] Scoreboard connected to all agents
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(254) @ 0: uvm_test_top.env [VORTEX_ENV] Coverage collector connected to all agents
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/axi_agent/axi_agent.sv(136) @ 0: uvm_test_top.env.m_axi_agent [AXI_AGENT] AXI Agent configured:  ACTIVE mode, ID_WIDTH=8
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/dcr_agent/dcr_agent.sv(143) @ 0: uvm_test_top.env.m_dcr_agent [DCR_AGENT] DCR agent configured: PASSIVE mode
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_sequencer.sv(66) @ 0: uvm_test_top.env.m_host_agent.m_sequencer [HOST_SQCR] Host sequencer ready
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_agent.sv(140) @ 0: uvm_test_top.env.m_host_agent [HOST_AGENT] 
+# ========================================
+#     Host Agent Configuration
+# ========================================
+#   Mode:           ACTIVE
+#   Driver:        ✓
+#   Sequencer:     ✓
+#   Monitor:       ✓
+# ========================================
+#   Interfaces Used:
+#     - vortex_mem_if.master_driver
+#     - vortex_dcr_if.master_driver
+#     - vortex_status_if.monitor
+# ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_agent.sv(115) @ 0: uvm_test_top.env.m_status_agent [STATUS_AGENT] Status agent configured: PASSIVE (monitor-only)
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_agent.sv(118) @ 0: uvm_test_top.env.m_status_agent [STATUS_AGENT] Status sampling every 100 cycles
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_virtual_sequencer.sv(83) @ 0: uvm_test_top.env.m_virtual_sequencer [VIRT_SQCR] 
+# ========================================
+#   Virtual Sequencer Configuration
+# ========================================
+#   mem_sequencer:  ✗
+#   axi_sequencer:  ✓
+#   dcr_sequencer:  ✗
+#   host_sequencer: ✓
+# ========================================
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_virtual_sequencer.sv(96) @ 0: uvm_test_top.env.m_virtual_sequencer [VIRT_SQCR] mem_sequencer not connected
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_virtual_sequencer.sv(100) @ 0: uvm_test_top.env.m_virtual_sequencer [VIRT_SQCR] dcr_sequencer not connected
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(266) @ 0: uvm_test_top.env [VORTEX_ENV] 
+# ╔══════════════════════════════════════════════╗
+# ║       Vortex UVM Environment Topology        ║
+# ╠══════════════════════════════════════════════╣
+# ║  Config        : 1CL_1C_4W_4T_RV32_ F_AXI   ║
+# ╠══════════════════════════════════════════════╣
+# ║  mem_agent     : DISABLED                   ║
+# ║  axi_agent     : ACTIVE                     ║
+# ║  dcr_agent     : ACTIVE                     ║
+# ║  host_agent    : ACTIVE                     ║
+# ║  status_agent  : PASSIVE                    ║
+# ╠══════════════════════════════════════════════╣
+# ║  Scoreboard    : ENABLED                    ║
+# ║  Coverage      : ENABLED                    ║
+# ║  Virt Seqr     : CREATED                    ║
+# ╚══════════════════════════════════════════════╝
+# 
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_base_test.sv(117) @ 0: uvm_test_top [vortex_smoke_test] 
+# ================================================================================
+#   Test:        vortex_smoke_test
+#   Config:      1CL_1C_4W_4T_RV32_ F_AXI
+#   Timeout:     1000000 cycles
+# ================================================================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(105) @ 0: uvm_test_top [vortex_smoke_test] 
+# ╔════════════════════════════════════════════════════════════════════════════╗
+# ║                VORTEX SMOKE TEST (TB_TOP DCR Edition)                      ║
+# ╚════════════════════════════════════════════════════════════════════════════╝
+#   Test Phases:
+#     0. TB_TOP initializes DCR (AUTOMATIC - during reset) ✓
+#     1. LOAD PROGRAM into memory
+#     2. Wait for execution to start
+#     3. Monitor execution
+#     4. Wait for completion
+#     5. Validate results
+# ────────────────────────────────────────────────────────────────────────────
+#   Configuration:
+#     Startup Addr: 0x0000000080000000 (set by TB_TOP)
+#     Cores:        1
+#     Timeout:      1000000 cycles
+# ╚════════════════════════════════════════════════════════════════════════════╝
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(135) @ 0: uvm_test_top [vortex_smoke_test] Pre-loading program during reset...
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(167) @ 0: uvm_test_top.env.m_scoreboard [SCOREBOARD] SimX disabled — shadow-memory checks only
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/axi_agent/axi_driver.sv(121) @ 0: uvm_test_top.env.m_axi_agent.m_driver [AXI_DRV] Waiting for reset...
+# [TB_TOP @ 1000] ✓ mem_model verified in config_db
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(166) @ 2000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(167) @ 2000: uvm_test_top [vortex_smoke_test] LOADING PROGRAM
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(168) @ 2000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(174) @ 2000: uvm_test_top [vortex_smoke_test] ✓ mem_model found (context: null,*)
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(208) @ 2000: uvm_test_top [vortex_smoke_test] Loading program: /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex
+# [MEM_MODEL] Loaded 64 bytes from /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex at base=0x0000000080000000
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(225) @ 2000: uvm_test_top [vortex_smoke_test] Loading at cfg.startup_addr=0x0000000080000000
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(230) @ 2000: uvm_test_top [vortex_smoke_test] ✓ Loaded 64 bytes successfully
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(237) @ 2000: uvm_test_top [vortex_smoke_test] ========================================
+#                 5000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0xxxxxxxxx ***
+#                 5000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0xxxxxxxxx) ***
+#                15000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0xxxxxxxxx ***
+#                15000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0xxxxxxxxx) ***
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_driver.sv(128) @ 15000: uvm_test_top.env.m_host_agent.m_driver [HOST_DRV] Host driver reset complete
+#                25000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0xxxxxxxxx ***
+#                25000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0xxxxxxxxx) ***
+#                35000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0xxxxxxxxx ***
+#                35000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0xxxxxxxxx) ***
+#                45000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0xxxxxxxxx ***
+#                45000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0xxxxxxxxx) ***
+# [TB_TOP @ 45000] DCR: writing 5 base DCRs during reset, STARTUP_ADDR=0x0000000080000000
+#                55000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0xxxxxxxxx ***
+#                55000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0xxxxxxxxx) ***
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_monitor.sv(130) @ 55000: uvm_test_top.env.m_host_agent.m_monitor [HOST_MON] Startup address set to 0x80000000
+#                65000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#                65000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0x80000000) ***
+#                75000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#                75000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#                85000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#                85000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#                95000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#                95000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               105000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               105000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               115000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               115000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               125000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               125000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               135000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               135000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+# [TB_TOP @ 135000] DCR: all 5 base DCRs written (reset still asserted)
+#               145000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               145000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               155000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               155000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               165000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               165000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               175000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               175000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               185000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               185000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               195000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               195000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               205000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               205000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               215000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               215000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               225000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               225000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               235000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               235000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               245000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               245000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               255000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               255000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               265000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               265000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               275000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               275000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               285000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               285000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               295000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               295000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               305000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               305000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               315000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               315000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               325000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               325000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               335000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               335000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               345000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               345000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               355000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               355000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               365000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               365000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               375000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               375000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               385000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               385000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               395000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               395000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               405000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               405000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               415000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               415000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               425000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               425000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               435000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               435000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               445000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               445000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               455000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               455000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               465000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               465000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               475000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               475000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               485000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               485000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               495000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               495000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               505000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               505000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               515000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               515000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               525000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               525000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               535000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               535000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               545000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               545000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               555000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               555000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               565000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               565000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               575000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               575000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               585000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               585000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               595000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               595000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               605000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               605000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               615000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               615000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               625000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               625000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               635000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               635000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               645000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               645000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               655000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               655000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               665000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               665000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               675000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               675000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               685000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               685000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               695000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               695000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               705000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               705000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               715000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               715000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               725000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               725000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               735000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               735000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               745000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               745000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               755000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               755000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               765000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               765000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               775000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               775000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               785000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               785000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               795000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               795000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               805000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               805000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               815000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               815000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               825000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               825000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               835000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               835000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               845000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               845000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               855000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               855000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               865000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               865000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               875000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               875000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               885000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               885000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               895000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               895000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               905000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               905000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               915000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               915000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               925000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               925000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               935000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               935000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               945000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               945000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               955000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               955000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               965000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               965000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               975000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               975000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               985000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               985000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#               995000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#               995000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1005000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1005000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1015000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1015000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1025000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1025000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1035000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1035000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1045000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1045000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1055000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1055000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1065000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1065000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1075000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1075000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1085000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1085000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1095000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1095000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1105000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1105000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1115000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1115000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1125000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1125000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1135000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1135000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1145000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1145000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1155000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1155000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1165000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1165000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1175000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1175000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1185000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1185000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1195000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1195000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1205000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1205000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1215000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1215000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1225000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1225000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1235000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1235000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1245000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1245000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1255000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1255000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1265000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1265000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1275000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1275000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1285000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1285000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1295000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1295000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1305000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1305000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1315000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1315000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1325000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1325000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1335000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1335000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1345000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1345000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1355000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1355000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1365000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1365000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1375000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1375000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1385000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1385000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1395000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1395000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1405000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1405000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1415000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1415000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1425000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1425000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1435000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1435000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1445000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1445000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1455000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1455000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1465000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1465000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1475000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1475000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1485000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1485000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1495000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1495000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1505000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1505000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1515000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1515000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1525000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1525000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1535000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1535000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1545000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1545000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1555000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1555000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1565000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1565000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1575000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1575000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1585000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1585000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1595000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1595000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1605000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1605000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1615000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1615000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1625000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1625000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1635000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1635000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1645000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1645000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1655000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1655000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1665000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1665000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1675000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1675000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1685000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1685000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1695000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1695000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1705000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1705000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1715000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1715000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1725000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1725000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1735000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1735000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1745000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1745000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1755000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1755000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1765000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1765000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1775000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1775000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1785000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1785000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1795000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1795000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1805000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1805000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1815000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1815000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1825000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1825000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1835000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1835000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1845000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1845000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1855000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1855000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1865000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1865000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1875000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1875000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1885000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1885000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1895000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1895000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1905000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1905000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1915000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1915000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1925000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1925000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1935000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1935000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1945000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1945000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1955000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1955000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1965000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1965000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1975000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1975000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1985000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1985000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              1995000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              1995000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2005000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2005000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2015000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2015000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2025000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2025000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2035000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2035000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2045000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2045000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2055000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2055000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2065000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2065000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2075000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2075000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2085000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2085000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2095000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2095000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2105000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2105000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2115000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2115000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2125000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2125000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2135000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2135000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2145000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2145000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2155000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2155000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2165000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2165000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2175000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2175000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2185000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2185000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2195000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2195000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2205000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2205000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2215000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2215000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2225000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2225000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2235000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2235000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2245000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2245000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2255000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2255000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2265000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2265000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2275000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2275000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2285000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2285000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2295000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2295000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2305000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2305000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2315000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2315000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2325000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2325000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2335000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2335000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2345000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2345000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2355000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2355000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2365000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2365000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2375000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2375000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2385000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2385000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2395000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2395000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2405000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2405000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2415000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2415000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2425000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2425000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2435000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2435000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2445000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2445000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2455000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2455000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2465000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2465000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2475000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2475000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2485000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2485000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2495000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2495000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2505000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2505000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2515000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2515000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2525000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2525000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2535000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2535000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2545000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2545000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2555000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2555000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2565000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2565000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2575000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2575000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2585000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2585000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2595000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2595000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2605000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2605000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2615000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2615000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2625000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2625000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2635000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2635000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2645000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2645000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2655000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2655000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2665000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2665000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2675000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2675000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2685000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2685000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2695000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2695000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2705000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2705000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2715000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2715000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2725000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2725000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2735000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2735000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2745000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2745000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2755000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2755000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2765000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2765000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2775000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2775000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2785000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2785000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2795000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2795000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2805000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2805000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2815000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2815000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2825000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2825000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2835000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2835000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2845000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2845000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2855000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2855000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2865000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2865000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2875000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2875000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2885000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2885000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2895000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2895000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2905000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2905000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2915000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2915000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2925000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2925000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2935000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2935000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2945000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2945000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2955000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2955000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2965000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2965000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2975000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2975000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2985000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2985000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              2995000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              2995000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3005000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3005000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3015000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3015000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3025000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3025000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3035000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3035000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3045000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3045000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3055000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3055000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3065000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3065000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3075000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3075000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3085000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3085000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3095000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3095000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3105000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3105000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3115000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3115000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3125000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3125000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3135000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3135000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3145000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3145000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3155000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3155000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3165000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3165000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3175000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3175000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3185000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3185000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3195000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3195000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3205000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3205000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3215000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3215000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3225000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3225000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3235000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3235000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3245000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3245000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3255000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3255000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3265000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3265000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3275000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3275000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3285000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3285000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3295000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3295000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3305000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3305000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3315000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3315000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3325000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3325000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3335000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3335000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3345000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3345000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3355000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3355000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3365000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3365000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3375000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3375000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3385000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3385000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3395000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3395000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3405000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3405000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3415000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3415000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3425000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3425000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3435000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3435000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3445000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3445000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3455000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3455000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3465000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3465000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3475000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3475000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3485000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3485000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3495000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3495000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3505000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3505000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3515000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3515000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3525000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3525000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3535000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3535000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3545000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3545000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3555000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3555000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3565000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3565000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3575000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3575000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3585000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3585000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3595000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3595000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3605000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3605000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3615000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3615000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3625000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3625000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3635000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3635000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3645000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3645000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3655000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3655000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3665000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3665000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3675000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3675000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3685000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3685000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3695000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3695000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3705000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3705000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3715000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3715000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3725000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3725000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3735000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3735000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3745000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3745000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3755000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3755000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3765000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3765000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3775000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3775000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3785000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3785000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3795000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3795000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3805000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3805000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3815000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3815000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3825000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3825000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3835000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3835000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3845000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3845000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3855000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3855000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3865000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3865000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3875000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3875000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3885000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3885000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3895000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3895000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3905000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3905000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3915000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3915000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3925000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3925000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3935000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3935000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3945000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3945000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3955000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3955000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3965000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3965000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3975000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3975000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              3985000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3985000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+# [TB_TOP @ 3985000] Releasing reset — startup_addr=0x0000000080000000 valid
+#              3995000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              3995000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+# [TB_TOP @ 3995000] Starting MEM responder
+#              4005000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              4005000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+#              4015000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
+#              4015000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/axi_agent/axi_driver.sv(132) @ 4025000: uvm_test_top.env.m_axi_agent.m_driver [AXI_DRV] Reset complete — driver ready
+# [TB_TOP @ 4035000] Reset sequence complete - System ready
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_monitor.sv(266) @ 4035000: uvm_test_top.env.m_status_agent.m_monitor [STATUS_MON] ✓ Execution started @ cycle 4, time 4035000
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_monitor.sv(165) @ 4035000: uvm_test_top.env.m_host_agent.m_monitor [HOST_MON] Kernel execution started at time 4035000, cycle 4
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(142) @ 4085000: uvm_test_top [vortex_smoke_test] Reset released — program pre-loaded, DCR configured by TB_TOP
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(293) @ 4085000: uvm_test_top [vortex_smoke_test] Waiting for execution completion...
+# [AXI_MEM @ 4705000] AR: id=0 addr=0x80000000 len=0
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(260) @ 4705000: uvm_test_top [vortex_smoke_test] ✓ First AXI read (AR) transaction detected!
+# [AXI_MEM @ 4715000] R: done id=0 beats=1
+# 
+# [TB_STATUS @ 4715000] ✓ Execution STARTED
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(391) @ 4715000: uvm_test_top.env.m_scoreboard [SCOREBOARD] AXI RD beat[0] 0x80000000 — no reference, skipping
+# 
+# ╔═══════════════════════════════════════════════════╗
+# ║  ✓ EXECUTION COMPLETE (DUT busy=0)                ║
+# ╚═══════════════════════════════════════════════════╝
+#   Total Cycles: 153  Mem Ops: 1  Instructions: 1
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(296) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Execution completed
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(319) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(320) @ 5525000: uvm_test_top [vortex_smoke_test] TEST VALIDATION
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(321) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(325) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Program loaded: 64 bytes
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(335) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ DCR configured by TB_TOP
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(344) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ EBREAK detected
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(353) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Instructions: 1
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(367) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Memory reads (AXI AR): 1
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(380) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(381) @ 5525000: uvm_test_top [vortex_smoke_test] EXECUTION SUMMARY
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(382) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(383) @ 5525000: uvm_test_top [vortex_smoke_test] Program bytes:  64
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(384) @ 5525000: uvm_test_top [vortex_smoke_test] DCR Writes:     2 (by TB_TOP)
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(385) @ 5525000: uvm_test_top [vortex_smoke_test] Memory Reads:   1
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(386) @ 5525000: uvm_test_top [vortex_smoke_test] Memory Writes:  0
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(387) @ 5525000: uvm_test_top [vortex_smoke_test] Total Cycles:   154
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(388) @ 5525000: uvm_test_top [vortex_smoke_test] Instructions:   1
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(392) @ 5525000: uvm_test_top [vortex_smoke_test] IPC:            0.006
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(395) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(400) @ 5525000: uvm_test_top [vortex_smoke_test] *** SMOKE TEST PASSED ***
+# UVM_INFO /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 5525000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/agents/dcr_agent/dcr_monitor.sv(213) @ 5525000: uvm_test_top.env.m_dcr_agent.m_monitor [DCR_MON] Test ended without startup configuration
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_monitor.sv(449) @ 5525000: uvm_test_top.env.m_status_agent.m_monitor [STATUS_MON] Execution started but did not complete (no EBREAK)
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/axi_agent/axi_driver.sv(498) @ 5525000: uvm_test_top.env.m_axi_agent.m_driver [AXI_DRV] 
+# ========================================
+#          AXI Driver Statistics          
+# ========================================
+#   Total Writes:       0
+#   Avg Write Latency:  0.00 cycles
+#   Total Reads:        0
+#   Avg Read Latency:   0.00 cycles
+#   Outstanding Writes: 0
+#   Outstanding Reads:  0
+#   Available IDs:      256 / 256
+# ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/axi_agent/axi_monitor.sv(587) @ 5525000: uvm_test_top.env.m_axi_agent.m_monitor [AXI_MON] 
+# ========================================
+#     AXI Monitor Statistics
+# ========================================
+#   Write Addresses:     0
+#   Write Data Beats:    0
+#   Write Responses:     0
+#   Read Addresses:      1
+#   Read Data Beats:     1
+#   Protocol Violations: 0
+#   Pending AW (no W):   0
+#   Pending B:           0
+#   Pending R:           0
+# ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_coverage_collector.sv(413) @ 5525000: uvm_test_top.env.m_coverage [COVERAGE] 
+# ╔══════════════════════════════════════════╗
+# ║    Vortex Functional Coverage Report     ║
+# ╠══════════════════════════════════════════╣
+# ║  Memory Operations  :   0.00%             ║
+# ║  AXI Transactions   :  17.62%             ║
+# ║  DCR Configuration  :  35.00%             ║
+# ║  Host Operations    :  15.54%             ║
+# ║  Status/Performance :  44.79%             ║
+# ╠══════════════════════════════════════════╣
+# ║  TOTAL COVERAGE     :  22.59%             ║
+# ╚══════════════════════════════════════════╝
+# 
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_coverage_collector.sv(428) @ 5525000: uvm_test_top.env.m_coverage [COVERAGE] Total coverage 22.59% is below 90% goal
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/dcr_agent/dcr_monitor.sv(231) @ 5525000: uvm_test_top.env.m_dcr_agent.m_monitor [DCR_MON] 
+# ========================================
+#     DCR Monitor Statistics
+# ========================================
+#   Total Writes:       5
+#   Startup Configs:    1
+#   Perf Configs:       0
+#   Protocol Violations:0
+#   Unique DCRs:        5
+#   Startup Complete:    NO
+# ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_driver.sv(443) @ 5525000: uvm_test_top.env.m_host_agent.m_driver [HOST_DRV] 
+# ========================================
+#     Host Driver Statistics
+# ========================================
+#   Programs Loaded:   0
+#   DCR Writes:        0
+#   Kernels Launched:  0
+#   Completions:       0
+#   Timeouts:          0
+# ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_monitor.sv(270) @ 5525000: uvm_test_top.env.m_host_agent.m_monitor [HOST_MON] 
+# ========================================
+#     Host Monitor Statistics
+# ========================================
+#   DCR Writes:        5
+#   Kernel Launches:   1
+#   Kernel Completions:0
+# ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(472) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] 
+# ╔══════════════════════════════════════════╗
+# ║        Vortex Scoreboard Results         ║
+# ╠══════════════════════════════════════════╣
+# ║  Total Transactions : 12                 ║
+# ║  DCR Writes         : 5                  ║
+# ║  Comparisons        : 0                  ║
+# ║  Passed             : 0                  ║
+# ║  Failed             : 0                  ║
+# ║  Unchecked (no rsp) : 0                  ║
+# ║  Pass Rate          : 0.00             % ║
+# ║  SimX Enabled       : NO                 ║
+# ║  SimX Ran           : NO                 ║
+# ╚══════════════════════════════════════════╝
+# 
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(497) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] No data comparisons were performed.
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_monitor.sv(471) @ 5525000: uvm_test_top.env.m_status_agent.m_monitor [STATUS_MON] 
+# ========================================
+#     Status Monitor Statistics
+# ========================================
+#   Busy Transitions:   1
+#   Idle Transitions:   0
+#   Execution Started:  YES
+#   Execution Completed: NO
+#   Total Cycles:       0
+#   Total Instructions: 0
+#   Average IPC:        0.000
+#   Peak IPC:           0.014
+#   Stall Cycles:       0 (0.00%)
+#   Execution Time:     0
+# ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(312) @ 5525000: uvm_test_top.env [VORTEX_ENV] Environment report phase complete
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_base_test.sv(233) @ 5525000: uvm_test_top [vortex_smoke_test] 
+# ================================================================================
+#                               TEST SUMMARY
+# ================================================================================
+#   Test:         vortex_smoke_test
+#   Status:       PASSED ✓
+#   Errors:       0
+#   Warnings:     7
+# --------------------------------------------------------------------------------
+#   Cycles:       154
+#   Instructions: 1
+#   IPC:          0.006
+# ================================================================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_base_test.sv(249) @ 5525000: uvm_test_top [vortex_smoke_test] 
+# *** TEST PASSED ***
+# 
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(431) @ 5525000: uvm_test_top [vortex_smoke_test] 
+# ╔════════════════════════════════════════════════════════════════════════════╗
+# ║                      ✓✓✓ SMOKE TEST PASSED ✓✓✓                            ║
+# ║                                                                            ║
+# ║  TB_TOP DCR INTEGRATION:                                                   ║
+# ║    ✓ DCR initialized by TB_TOP (permanent fix for all tests)              ║
+# ║    ✓ No multi-driver conflicts                                            ║
+# ║    ✓ Proper timing coordination                                           ║
+# ║    ✓ Program loading in test                                              ║
+# ╠════════════════════════════════════════════════════════════════════════════╣
+# ║  STATISTICS:                                                               ║
+# ║    Program:         64         bytes                                       ║
+# ║    Cycles:          154                                                     ║
+# ║    Instructions:    1                                                       ║
+# ║    Memory Reads:    1                                                       ║
+# ║    Memory Writes:   0                                                       ║
+# ║                                                                            ║
+# ║  🎉 SCALABLE ARCHITECTURE WORKING!                                         ║
+# ╚════════════════════════════════════════════════════════════════════════════╝
+# UVM_INFO /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 5525000: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   80
+# UVM_WARNING :    7
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [AXI_AGENT]     1
+# [AXI_DRV]     4
+# [AXI_MON]     1
+# [COVERAGE]     2
+# [DCR_AGENT]     2
+# [DCR_MON]     2
+# [HOST_AGENT]     1
+# [HOST_DRV]     2
+# [HOST_MON]     3
+# [HOST_SQCR]     1
+# [RNTST]     1
+# [SCOREBOARD]     4
+# [STATUS_AGENT]     2
+# [STATUS_MON]     3
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# [VIRT_SQCR]     3
+# [VORTEX_ENV]    11
+# [vortex_smoke_test]    42
+# 
+# ** Note: $finish    : /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 5525 ns  Iteration: 70  Instance: /vortex_tb_top
+# 
+# ================================================================================
+# [TB_TOP @ 5525000] 🏁 Simulation Complete
+# ✓ Test Result:    PASS (EBREAK detected)
+#   Total Cycles: 154  Instructions: 1
+# ================================================================
+#   mem_model statistics
+# ----------------------------------------------------------------
+#   Reads                 : 64
+#   Writes                : 64
+#   Bytes written         : 64
+#   Allocated byte entries: 64
+# ================================================================
+# ================================================================================
+# 
+# End time: 18:36:20 on Mar 30,2026, Elapsed time: 0:00:10
+# Errors: 0, Warnings: 50
