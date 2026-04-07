@@ -236,7 +236,7 @@ module vortex_tb_top;
                 else
                     $error("[TB_TOP @ %0t] ✗ Failed to pre-load program: %s", $time, prog_file);
             end else if (preload_mode) begin
-                $display("[TB_TOP @ %0t] ⚠ TB preload mode enabled but no +PROGRAM/+HEX specified", $time);
+                $display("[TB_TOP @ %0t] ⚠ TB preload mode enabled with no +PROGRAM/+HEX; expected only for tests that intentionally start with empty/programless memory", $time);
             end
         end
 
