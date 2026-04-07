@@ -34,6 +34,9 @@ package simx_pkg;
     import "DPI-C" context function int  simx_load_hex(
         input string filepath
     );
+    import "DPI-C" function int  simx_load_hex_at (
+        string filepath, longint unsigned base_addr
+        );
 
      // --- DCR configuration ---
     import "DPI-C" context function void simx_dcr_write(

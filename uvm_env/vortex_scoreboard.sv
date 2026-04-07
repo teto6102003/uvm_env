@@ -160,7 +160,7 @@ class vortex_scoreboard extends uvm_scoreboard;
   //==========================================================================
   // Run Phase — initialise SimX and pre-load program
   //==========================================================================
-  virtual task run_phase(uvm_phase phase);
+virtual task run_phase(uvm_phase phase);
     int status;
 
     if (!cfg.simx_enable) begin
@@ -181,21 +181,32 @@ class vortex_scoreboard extends uvm_scoreboard;
     end
     `uvm_info("SCOREBOARD", "SimX initialised successfully", UVM_MEDIUM)
 
-    // Install exit-code bootstrap so x3=0 is guaranteed before main program
-    simx_init_exit_code_register();
-
-    // Pre-load program into SimX RAM (mirrors what +PROGRAM does in the RTL TB)
+    // ── STEP 1: Load program FIRST ──────────────────────────────────────────
+    // Must happen before bootstrap so the bootstrap DCR write is the LAST one.
     if (cfg.program_path != "") begin
-      status = simx_load_bin(cfg.program_path, 64'(cfg.startup_addr));
+      if (cfg.program_type == "hex") begin
+        // Use hex_at to apply startup_addr offset to @00000000 addresses
+        status = simx_load_hex_at(cfg.program_path, 64'(cfg.startup_addr));
+      end else begin
+        status = simx_load_bin(cfg.program_path, 64'(cfg.startup_addr));
+      end
       if (status != 0)
         `uvm_error("SCOREBOARD",
-          $sformatf("simx_load_bin('%s') failed", cfg.program_path))
+          $sformatf("Failed to load program '%s' (type=%s)",
+                    cfg.program_path, cfg.program_type))
       else
         `uvm_info("SCOREBOARD",
           $sformatf("SimX: loaded '%s' @ 0x%0h", cfg.program_path, cfg.startup_addr),
           UVM_MEDIUM)
     end
-  endtask : run_phase
+
+    // ── STEP 2: Install exit-code bootstrap AFTER program load ───────────────
+    // This sets DCR startup to bootstrap at (startup_addr-16), overriding any
+    // DCR that simx_load_* may have set. Bootstrap sets x3=0 then jumps to
+    // startup_addr so the program always exits with code 0 (unless it sets x3).
+    simx_init_exit_code_register();
+
+endtask : run_phase
 
   //==========================================================================
   // Analysis Write Methods
@@ -208,15 +219,12 @@ class vortex_scoreboard extends uvm_scoreboard;
                 tr.rw ? "WR":"RD", tr.addr, tr.byteen, tr.tag), UVM_DEBUG)
 
     if (tr.rw) begin
-      shadow_memory[tr.addr] = tr.data;
-      if (cfg.simx_enable) begin
-        byte unsigned wr[];  wr = new[8];
-        for (int i = 0; i < 8; i++) wr[i] = tr.data[i*8 +: 8];
-        simx_write_mem(64'(tr.addr), 8, wr);
-      end
+      shadow_memory[tr.addr] = tr.data;   // DUT shadow only — SimX runs independently
     end else begin
-      if (tr.completed) compare_mem_transaction(tr);
-      else              mem_pending_q.push_back(tr);
+      if (tr.completed) 
+        compare_mem_transaction(tr);
+      else            
+        mem_pending_q.push_back(tr);
     end
   endfunction : write_mem
 
@@ -232,11 +240,11 @@ class vortex_scoreboard extends uvm_scoreboard;
         bit [63:0] baddr = tr.get_next_addr(beat);
         bit [63:0] bdata = (beat < tr.wdata.size()) ? tr.wdata[beat] : '0;
         shadow_memory[baddr[31:0]] = bdata;
-        if (cfg.simx_enable) begin
-          byte unsigned wr[];  wr = new[8];
-          for (int i = 0; i < 8; i++) wr[i] = bdata[i*8 +: 8];
-          simx_write_mem(baddr, 8, wr);
-        end
+        // if (cfg.simx_enable) begin
+        //   byte unsigned wr[];  wr = new[8];
+        //   for (int i = 0; i < 8; i++) wr[i] = bdata[i*8 +: 8];
+        //   simx_write_mem(baddr, 8, wr);
+        // end
       end
     end else begin
       if (tr.completed) compare_axi_transaction(tr);
