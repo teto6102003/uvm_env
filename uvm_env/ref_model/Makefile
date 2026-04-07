@@ -14,8 +14,7 @@ HW_DIR        = $(VORTEX_HOME)/hw
 # Test selection (default)
 TEST_MODE     ?= simple_postmortem
 # KERNEL_BIN    ?= $(VORTEX_HOME)/tests/kernel/kernel.bin
-# KERNEL_BIN    ?= $(VORTEX_HOME)/build32/verification/sim/questa/simx_dpi_3/tests/pro_1.bin
-KERNEL_BIN    ?= /home/stev_teto_22/vortex_uvm/uvm_env/ref_model/program_simple.bin
+KERNEL_BIN    ?= $(VORTEX_HOME)/build32/verification/sim/questa/simx_dpi_3/tests/pro_1.bin
 STEP_CYCLES   ?= 10
 TIMEOUT       ?= 100000
 
@@ -47,7 +46,6 @@ ARCH_CONFIGS += -DNUM_WARPS=4
 ARCH_CONFIGS += -DNUM_THREADS=4
 ARCH_CONFIGS += -DXLEN_64
 CXXFLAGS     += $(ARCH_CONFIGS)
-CXXFLAGS     += $(EXTRA_CXXFLAGS)
 
 # Architecture defines (should match your Vortex build)
 # CXXFLAGS     += -DXLEN_32
@@ -127,7 +125,7 @@ build: $(DPI_LIB)
 # On The Fly testes
 ###############################################################################
 # ── all on-the-fly hex tests ─────────────────────────────────────────────────
-HEX_TESTS := test_alu test_lsu test_mext test_fpu test_simt test_mwarp test_branch test_pipeline 
+HEX_TESTS := test_alu test_lsu test_mext test_fpu test_simt test_mwarp test_branch test_pipeline
 
 # Map test name → result address (must match the hex file's lui x20, ...)
 RESULT_ADDR_alu      := 0x80010000
@@ -209,7 +207,7 @@ test_simple_onthefly: $(DPI_LIB)
 
 # 3. Binary Post-Mortem Test (load .bin file)
 test_bin_postmortem: $(DPI_LIB)
-	@echo "=== Running Binary Post-Mortem Test ===" 
+	@echo "=== Running Binary Post-Mortem Test ==="
 	@if [ ! -f "$(KERNEL_BIN)" ]; then \
 	    echo "ERROR: Kernel binary not found: $(KERNEL_BIN)"; \
 	    exit 1; \

@@ -1,6 +1,6 @@
-# vsim -c vortex_tb_top "+UVM_TESTNAME=vortex_smoke_test" "+NUM_CLUSTERS=1" "+NUM_CORES=1" "+NUM_WARPS=4" "+NUM_THREADS=4" "+TIMEOUT=1000000" "+STARTUP_ADDR=80000000" "+USE_AXI_WRAPPER" "+PROGRAM=/home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex" "+WAVE=/home/stev_teto_22/vortex_uvm/results/20260407/run_041212_vortex_smoke_test/waves/vortex_smoke_test_axi.vcd" -sv_lib /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi -sv_lib /home/stev_teto_22/vortex_uvm/uvm_env/ref_model/simx_model -do "run -all; quit -f" 
-# Start time: 04:12:21 on Apr 07,2026
-# Loading /tmp/stev_teto_22@stevteto_dpi_27178/linux_x86_64_gcc-7.4.0/export_tramp.so
+# vsim -c vortex_tb_top "+UVM_TESTNAME=vortex_smoke_test" "+NUM_CLUSTERS=1" "+NUM_CORES=1" "+NUM_WARPS=4" "+NUM_THREADS=4" "+TIMEOUT=1000000" "+STARTUP_ADDR=80000000" "+USE_AXI_WRAPPER" "+PROGRAM=/home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex" "+WAVE=/home/stev_teto_22/vortex_uvm/results/20260330/run_183603_vortex_smoke_test/waves/vortex_smoke_test_axi.vcd" -sv_lib /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi -do "run -all; quit -f" 
+# Start time: 18:36:10 on Mar 30,2026
+# Loading /tmp/stev_teto_22@stevteto_dpi_15484/linux_x86_64_gcc-7.4.0/export_tramp.so
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: /home/stev_teto_22/vortex/hw/rtl/tcu/VX_tcu_uops.sv(27): (vopt-13314) Defaulting port 'ibuf_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # ** Warning: /home/stev_teto_22/vortex/hw/rtl/core/VX_csr_unit.sv(24): (vopt-13314) Defaulting port 'base_dcrs' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -212,12 +212,39 @@
 # Loading work.VX_lsu_adapter(fast__1)
 # Loading work.VX_stream_unpack(fast__1)
 # Loading work.VX_stream_pack(fast__1)
-# Compiling /tmp/stev_teto_22@stevteto_dpi_27178/linux_x86_64_gcc-7.4.0/exportwrapper.c
-# Compiling /tmp/stev_teto_22@stevteto_dpi_27178/linux_x86_64_gcc-11/exportwrapper.c
-# Loading /tmp/stev_teto_22@stevteto_dpi_27178/linux_x86_64_gcc-11/vsim_auto_compile.so
+# Compiling /tmp/stev_teto_22@stevteto_dpi_15484/linux_x86_64_gcc-7.4.0/exportwrapper.c
+# Compiling /tmp/stev_teto_22@stevteto_dpi_15484/linux_x86_64_gcc-11/exportwrapper.c
+# Loading /tmp/stev_teto_22@stevteto_dpi_15484/linux_x86_64_gcc-11/vsim_auto_compile.so
 # Loading /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so
-# Loading /home/stev_teto_22/vortex_uvm/uvm_env/ref_model/simx_model.so
-# ** Warning: (vsim-3770) Failed to find user specified function 'dpi_trace' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so /home/stev_teto_22/vortex_uvm/uvm_env/ref_model/simx_model.so ".
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_init' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_cleanup' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_write_mem' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_write_mem' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_read_mem' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_read_mem' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_load_bin' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_load_hex' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_dcr_write' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_run' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_step' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_is_done' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_get_exitcode' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'simx_init_exit_code_register' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
+#    Time: 0 ps  Iteration: 0  Region: /vortex_env_pkg File: /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env_pkg.sv
+# ** Warning: (vsim-3770) Failed to find user specified function 'dpi_trace' in DPI precompiled library search list "/home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/uvm-1.2/linux_x86_64/uvm_dpi.so ".
 #    Time: 0 ps  Iteration: 0  Region: /VX_tcu_pkg File: /home/stev_teto_22/vortex/hw/rtl/tcu/VX_tcu_pkg.sv
 # run -all
 # UVM_INFO /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
@@ -254,7 +281,7 @@
 # ================================================================================
 # [TB_TOP @ 0] Program file: /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex
 # [TB_TOP @ 0] Custom timeout: 1000000 cycles
-# [TB_TOP @ 0] Waveform output: /home/stev_teto_22/vortex_uvm/results/20260407/run_041212_vortex_smoke_test/waves/vortex_smoke_test_axi.vcd
+# [TB_TOP @ 0] Waveform output: /home/stev_teto_22/vortex_uvm/results/20260330/run_183603_vortex_smoke_test/waves/vortex_smoke_test_axi.vcd
 # [TB_TOP @ 0] Waveforms: vsim.wlf (Questa)
 # CONFIGS: num_threads=4, num_warps=4, num_cores=1, num_clusters=1, socket_size=1, local_mem_base=0xffff0000, num_barriers=2
 # [TB_TOP @ 0] DUT: Vortex_axi AXI_TID_W=8
@@ -269,7 +296,7 @@
 # [TB_TOP @ 0] Timeout watchdog armed (1000000 cycles)
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_base_test.sv(58) @ 0: uvm_test_top [vortex_smoke_test] Building test...
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_base_test.sv(65) @ 0: uvm_test_top [vortex_smoke_test] DEBUG cfg after plusargs: cores=1 warps=4 threads=4 str=1CL_1C_4W_4T_RV32_ F_AXI
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(97) @ 0: uvm_test_top [vortex_smoke_test] Smoke test cfg: cores=1 warps=4 threads=4 startup=0x0000000080000000 timeout=1000000 iface=     AXI4
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(92) @ 0: uvm_test_top [vortex_smoke_test] Smoke test cfg: cores=1 warps=4 threads=4 startup=0x0000000080000000 timeout=1000000 iface=     AXI4
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(52) @ 0: uvm_test_top [vortex_smoke_test] Building smoke test (TB_TOP DCR Edition)...
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(127) @ 0: uvm_test_top.env [VORTEX_ENV] axi_agent created
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_env.sv(132) @ 0: uvm_test_top.env [VORTEX_ENV] dcr_agent created
@@ -335,7 +362,7 @@
 #   Config:      1CL_1C_4W_4T_RV32_ F_AXI
 #   Timeout:     1000000 cycles
 # ================================================================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(110) @ 0: uvm_test_top [vortex_smoke_test] 
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(105) @ 0: uvm_test_top [vortex_smoke_test] 
 # ╔════════════════════════════════════════════════════════════════════════════╗
 # ║                VORTEX SMOKE TEST (TB_TOP DCR Edition)                      ║
 # ╚════════════════════════════════════════════════════════════════════════════╝
@@ -352,45 +379,19 @@
 #     Cores:        1
 #     Timeout:      1000000 cycles
 # ╚════════════════════════════════════════════════════════════════════════════╝
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(140) @ 0: uvm_test_top [vortex_smoke_test] Pre-loading program during reset...
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(171) @ 0: uvm_test_top.env.m_scoreboard [SCOREBOARD] Initialising SimX: cores=1 warps=4 threads=4
-# [SimX-DPI] ========================================
-# [SimX-DPI] Initializing SimX Golden Model
-# [SimX-DPI] Cores=1, Warps=4, Threads=4
-# [SimX-DPI] Architecture created successfully
-# [SimX-DPI] Creating RAM: capacity=0x100000000, page_size=0x1000
-# [SimX-DPI] RAM created successfully
-# [SimX-DPI] Attaching RAM to processor...
-# [SimX-DPI] RAM attached successfully
-# [SimX-DPI] Verifying RAM...
-# [SimX-DPI] RAM verification PASSED
-# [SimX-DPI] Initialization successful
-# [SimX-DPI] ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(182) @ 0: uvm_test_top.env.m_scoreboard [SCOREBOARD] SimX initialised successfully
-# [SimX-DPI] hex_at: @0 → absolute 0x80000000
-# [SimX-DPI] Loaded 64 bytes from '/home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex' at base=0x80000000
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(198) @ 0: uvm_test_top.env.m_scoreboard [SCOREBOARD] SimX: loaded '/home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex' @ 0x80000000
-# [SimX-DPI] ========================================
-# [SimX-DPI] Installing Exit Code Bootstrap
-# [SimX-DPI] Bootstrap address: 0x7ffffff0
-# [SimX-DPI] Main program at:   0x80000000
-# [SimX-DPI] Bootstrap code written to memory
-# [SimX-DPI] DCRs updated to start at bootstrap
-# [SimX-DPI] Bootstrap will:
-# [SimX-DPI]   1. Set x3 = 0 (exit code)
-# [SimX-DPI]   2. Jump to 0x80000000 (auipc+jalr x1+12)
-# [SimX-DPI] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(135) @ 0: uvm_test_top [vortex_smoke_test] Pre-loading program during reset...
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(167) @ 0: uvm_test_top.env.m_scoreboard [SCOREBOARD] SimX disabled — shadow-memory checks only
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/axi_agent/axi_driver.sv(121) @ 0: uvm_test_top.env.m_axi_agent.m_driver [AXI_DRV] Waiting for reset...
 # [TB_TOP @ 1000] ✓ mem_model verified in config_db
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(171) @ 2000: uvm_test_top [vortex_smoke_test] ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(172) @ 2000: uvm_test_top [vortex_smoke_test] LOADING PROGRAM
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(173) @ 2000: uvm_test_top [vortex_smoke_test] ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(179) @ 2000: uvm_test_top [vortex_smoke_test] ✓ mem_model found (context: null,*)
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(213) @ 2000: uvm_test_top [vortex_smoke_test] Loading program: /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(166) @ 2000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(167) @ 2000: uvm_test_top [vortex_smoke_test] LOADING PROGRAM
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(168) @ 2000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(174) @ 2000: uvm_test_top [vortex_smoke_test] ✓ mem_model found (context: null,*)
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(208) @ 2000: uvm_test_top [vortex_smoke_test] Loading program: /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex
 # [MEM_MODEL] Loaded 64 bytes from /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/program_simple.hex at base=0x0000000080000000
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(230) @ 2000: uvm_test_top [vortex_smoke_test] Loading at cfg.startup_addr=0x0000000080000000
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(235) @ 2000: uvm_test_top [vortex_smoke_test] ✓ Loaded 64 bytes successfully
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(242) @ 2000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(225) @ 2000: uvm_test_top [vortex_smoke_test] Loading at cfg.startup_addr=0x0000000080000000
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(230) @ 2000: uvm_test_top [vortex_smoke_test] ✓ Loaded 64 bytes successfully
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(237) @ 2000: uvm_test_top [vortex_smoke_test] ========================================
 #                 5000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0xxxxxxxxx ***
 #                 5000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0xxxxxxxxx) ***
 #                15000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0xxxxxxxxx ***
@@ -406,33 +407,23 @@
 #                55000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0xxxxxxxxx ***
 #                55000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0xxxxxxxxx) ***
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_monitor.sv(130) @ 55000: uvm_test_top.env.m_host_agent.m_monitor [HOST_MON] Startup address set to 0x80000000
-# [SimX-DPI] DCR Write: addr=0x1, value=0x80000000
-# [SimX-DPI] DCR write successful
 #                65000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
 #                65000: *** VX_schedule[0] RESET: warp_pcs[0]=0xxxxxxxxx (from_fullPC=0x80000000) ***
 #                75000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
 #                75000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
-# [SimX-DPI] DCR Write: addr=0x2, value=0x0
-# [SimX-DPI] DCR write successful
 #                85000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
 #                85000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
 #                95000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
 #                95000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
-# [SimX-DPI] DCR Write: addr=0x3, value=0x0
-# [SimX-DPI] DCR write successful
 #               105000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
 #               105000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
 #               115000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
 #               115000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
-# [SimX-DPI] DCR Write: addr=0x4, value=0x0
-# [SimX-DPI] DCR write successful
 #               125000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
 #               125000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
 #               135000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
 #               135000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
 # [TB_TOP @ 135000] DCR: all 5 base DCRs written (reset still asserted)
-# [SimX-DPI] DCR Write: addr=0x5, value=0x0
-# [SimX-DPI] DCR write successful
 #               145000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
 #               145000: *** VX_schedule[0] RESET: warp_pcs[0]=0x80000000 (from_fullPC=0x80000000) ***
 #               155000: *** VX_schedule[0] RESET: base_dcrs.startup_addr=0x80000000 ***
@@ -1215,183 +1206,43 @@
 # [TB_TOP @ 4035000] Reset sequence complete - System ready
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_monitor.sv(266) @ 4035000: uvm_test_top.env.m_status_agent.m_monitor [STATUS_MON] ✓ Execution started @ cycle 4, time 4035000
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/host_agent/host_monitor.sv(165) @ 4035000: uvm_test_top.env.m_host_agent.m_monitor [HOST_MON] Kernel execution started at time 4035000, cycle 4
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(147) @ 4085000: uvm_test_top [vortex_smoke_test] Reset released — program pre-loaded, DCR configured by TB_TOP
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(298) @ 4085000: uvm_test_top [vortex_smoke_test] Waiting for execution completion...
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(142) @ 4085000: uvm_test_top [vortex_smoke_test] Reset released — program pre-loaded, DCR configured by TB_TOP
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(293) @ 4085000: uvm_test_top [vortex_smoke_test] Waiting for execution completion...
 # [AXI_MEM @ 4705000] AR: id=0 addr=0x80000000 len=0
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(265) @ 4705000: uvm_test_top [vortex_smoke_test] ✓ First AXI read (AR) transaction detected!
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(260) @ 4705000: uvm_test_top [vortex_smoke_test] ✓ First AXI read (AR) transaction detected!
 # [AXI_MEM @ 4715000] R: done id=0 beats=1
 # 
 # [TB_STATUS @ 4715000] ✓ Execution STARTED
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(399) @ 4715000: uvm_test_top.env.m_scoreboard [SCOREBOARD] AXI RD beat[0] 0x80000000 — no reference, skipping
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(391) @ 4715000: uvm_test_top.env.m_scoreboard [SCOREBOARD] AXI RD beat[0] 0x80000000 — no reference, skipping
 # 
 # ╔═══════════════════════════════════════════════════╗
 # ║  ✓ EXECUTION COMPLETE (DUT busy=0)                ║
 # ╚═══════════════════════════════════════════════════╝
 #   Total Cycles: 153  Mem Ops: 1  Instructions: 1
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(301) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Execution completed
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(324) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(325) @ 5525000: uvm_test_top [vortex_smoke_test] TEST VALIDATION
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(326) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(330) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Program loaded: 64 bytes
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(340) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ DCR configured by TB_TOP
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(349) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ EBREAK detected
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(358) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Instructions: 1
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(372) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Memory reads (AXI AR): 1
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(385) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(386) @ 5525000: uvm_test_top [vortex_smoke_test] EXECUTION SUMMARY
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(387) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(388) @ 5525000: uvm_test_top [vortex_smoke_test] Program bytes:  64
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(389) @ 5525000: uvm_test_top [vortex_smoke_test] DCR Writes:     2 (by TB_TOP)
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(390) @ 5525000: uvm_test_top [vortex_smoke_test] Memory Reads:   1
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(391) @ 5525000: uvm_test_top [vortex_smoke_test] Memory Writes:  0
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(392) @ 5525000: uvm_test_top [vortex_smoke_test] Total Cycles:   154
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(393) @ 5525000: uvm_test_top [vortex_smoke_test] Instructions:   1
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(397) @ 5525000: uvm_test_top [vortex_smoke_test] IPC:            0.006
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(400) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(405) @ 5525000: uvm_test_top [vortex_smoke_test] *** SMOKE TEST PASSED ***
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(296) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Execution completed
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(319) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(320) @ 5525000: uvm_test_top [vortex_smoke_test] TEST VALIDATION
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(321) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(325) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Program loaded: 64 bytes
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(335) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ DCR configured by TB_TOP
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(344) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ EBREAK detected
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(353) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Instructions: 1
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(367) @ 5525000: uvm_test_top [vortex_smoke_test] ✓ Memory reads (AXI AR): 1
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(380) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(381) @ 5525000: uvm_test_top [vortex_smoke_test] EXECUTION SUMMARY
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(382) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(383) @ 5525000: uvm_test_top [vortex_smoke_test] Program bytes:  64
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(384) @ 5525000: uvm_test_top [vortex_smoke_test] DCR Writes:     2 (by TB_TOP)
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(385) @ 5525000: uvm_test_top [vortex_smoke_test] Memory Reads:   1
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(386) @ 5525000: uvm_test_top [vortex_smoke_test] Memory Writes:  0
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(387) @ 5525000: uvm_test_top [vortex_smoke_test] Total Cycles:   154
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(388) @ 5525000: uvm_test_top [vortex_smoke_test] Instructions:   1
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(392) @ 5525000: uvm_test_top [vortex_smoke_test] IPC:            0.006
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(395) @ 5525000: uvm_test_top [vortex_smoke_test] ========================================
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(400) @ 5525000: uvm_test_top [vortex_smoke_test] *** SMOKE TEST PASSED ***
 # UVM_INFO /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 5525000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(443) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] EBREAK never observed — running final comparison at extract_phase
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(293) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Running SimX to completion...
-# [SimX-DPI] ========================================
-# [SimX-DPI] Running processor to completion...
-# [SimX-DPI] Startup address: 0x80000000
-# [SimX-DPI] Execution finished
-# [SimX-DPI] Exit code: 3
-# [SimX-DPI] ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(295) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] SimX done — exit code = 3
-# UVM_ERROR /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(299) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] SimX exit code=3 (non-zero = program failed)
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(307) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Comparing result region: base=0x80100000  size=1024 bytes
-# [SimX-DPI] Read 1024 bytes from 0x80100000
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100000 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100008 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100010 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100018 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100020 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100028 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100030 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100038 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100040 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100048 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100050 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100058 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100060 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100068 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100070 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100078 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100080 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100088 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100090 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100098 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000a0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000a8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000b0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000b8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000c0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000c8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000d0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000d8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000e0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000e8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000f0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801000f8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100100 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100108 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100110 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100118 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100120 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100128 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100130 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100138 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100140 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100148 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100150 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100158 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100160 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100168 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100170 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100178 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100180 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100188 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100190 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100198 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001a0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001a8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001b0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001b8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001c0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001c8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001d0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001d8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001e0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001e8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001f0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801001f8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100200 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100208 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100210 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100218 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100220 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100228 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100230 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100238 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100240 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100248 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100250 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100258 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100260 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100268 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100270 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100278 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100280 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100288 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100290 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100298 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002a0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002a8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002b0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002b8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002c0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002c8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002d0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002d8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002e0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002e8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002f0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801002f8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100300 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100308 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100310 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100318 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100320 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100328 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100330 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100338 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100340 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100348 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100350 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100358 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100360 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100368 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100370 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100378 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100380 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100388 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100390 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x80100398 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003a0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003a8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003b0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003b8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003c0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003c8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003d0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003d8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003e0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003e8 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003f0 not written by DUT — skipping
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(331) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Result addr 0x801003f8 not written by DUT — skipping
 # UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/agents/dcr_agent/dcr_monitor.sv(213) @ 5525000: uvm_test_top.env.m_dcr_agent.m_monitor [DCR_MON] Test ended without startup configuration
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_monitor.sv(466) @ 5525000: uvm_test_top.env.m_status_agent.m_monitor [STATUS_MON] Execution started but did not complete (no EBREAK)
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_monitor.sv(449) @ 5525000: uvm_test_top.env.m_status_agent.m_monitor [STATUS_MON] Execution started but did not complete (no EBREAK)
 # UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/axi_agent/axi_driver.sv(498) @ 5525000: uvm_test_top.env.m_axi_agent.m_driver [AXI_DRV] 
 # ========================================
 #          AXI Driver Statistics          
@@ -1461,7 +1312,7 @@
 #   Kernel Launches:   1
 #   Kernel Completions:0
 # ========================================
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(480) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] 
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(472) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] 
 # ╔══════════════════════════════════════════╗
 # ║        Vortex Scoreboard Results         ║
 # ╠══════════════════════════════════════════╣
@@ -1472,12 +1323,12 @@
 # ║  Failed             : 0                  ║
 # ║  Unchecked (no rsp) : 0                  ║
 # ║  Pass Rate          : 0.00             % ║
-# ║  SimX Enabled       : YES                ║
-# ║  SimX Ran           : YES                ║
+# ║  SimX Enabled       : NO                 ║
+# ║  SimX Ran           : NO                 ║
 # ╚══════════════════════════════════════════╝
 # 
-# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(505) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] No data comparisons were performed.
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_monitor.sv(488) @ 5525000: uvm_test_top.env.m_status_agent.m_monitor [STATUS_MON] 
+# UVM_WARNING /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(497) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] No data comparisons were performed.
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/agents/status_agent/status_monitor.sv(471) @ 5525000: uvm_test_top.env.m_status_agent.m_monitor [STATUS_MON] 
 # ========================================
 #     Status Monitor Statistics
 # ========================================
@@ -1498,18 +1349,18 @@
 #                               TEST SUMMARY
 # ================================================================================
 #   Test:         vortex_smoke_test
-#   Status:       FAILED ✗
-#   Errors:       1
-#   Warnings:     136
+#   Status:       PASSED ✓
+#   Errors:       0
+#   Warnings:     7
 # --------------------------------------------------------------------------------
 #   Cycles:       154
 #   Instructions: 1
 #   IPC:          0.006
 # ================================================================================
-# UVM_ERROR /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_base_test.sv(251) @ 5525000: uvm_test_top [vortex_smoke_test] 
-# *** TEST FAILED ***
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_base_test.sv(249) @ 5525000: uvm_test_top [vortex_smoke_test] 
+# *** TEST PASSED ***
 # 
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(436) @ 5525000: uvm_test_top [vortex_smoke_test] 
+# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_tests/vortex_smoke_test.sv(431) @ 5525000: uvm_test_top [vortex_smoke_test] 
 # ╔════════════════════════════════════════════════════════════════════════════╗
 # ║                      ✓✓✓ SMOKE TEST PASSED ✓✓✓                            ║
 # ║                                                                            ║
@@ -1528,21 +1379,13 @@
 # ║                                                                            ║
 # ║  🎉 SCALABLE ARCHITECTURE WORKING!                                         ║
 # ╚════════════════════════════════════════════════════════════════════════════╝
-# UVM_INFO /home/stev_teto_22/vortex_uvm/uvm_env/vortex_scoreboard.sv(468) @ 5525000: uvm_test_top.env.m_scoreboard [SCOREBOARD] Cleaning up SimX
-# [SimX-DPI] ========================================
-# [SimX-DPI] Cleaning up SimX...
-# [SimX-DPI] Processor deleted
-# [SimX-DPI] RAM deleted
-# [SimX-DPI] Arch deleted
-# [SimX-DPI] Cleanup complete
-# [SimX-DPI] ========================================
 # UVM_INFO /home/stev_teto_22/mgc/install.aol/intelFPGA/21.2/questa_sim/questasim/verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 5525000: reporter [UVM/REPORT/SERVER] 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   85
-# UVM_WARNING :  136
-# UVM_ERROR :    2
+# UVM_INFO :   80
+# UVM_WARNING :    7
+# UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
 # [AXI_AGENT]     1
@@ -1556,7 +1399,7 @@
 # [HOST_MON]     3
 # [HOST_SQCR]     1
 # [RNTST]     1
-# [SCOREBOARD]   140
+# [SCOREBOARD]     4
 # [STATUS_AGENT]     2
 # [STATUS_MON]     3
 # [TEST_DONE]     1
@@ -1582,5 +1425,5 @@
 # ================================================================
 # ================================================================================
 # 
-# End time: 04:12:33 on Apr 07,2026, Elapsed time: 0:00:12
-# Errors: 0, Warnings: 36
+# End time: 18:36:20 on Mar 30,2026, Elapsed time: 0:00:10
+# Errors: 0, Warnings: 50
