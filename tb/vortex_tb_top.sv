@@ -213,6 +213,34 @@ module vortex_tb_top;
         uvm_config_db#(mem_model)::set(uvm_root::get(), "*",  "mem_model", memory);
 
         begin
+            string prog_file = "";
+            bit [63:0] load_addr = 64'h80000000;
+            bit [63:0] tmp_addr;
+            int n_bytes;
+            bit has_program;
+            bit preload_mode;
+
+            preload_mode = $test$plusargs("TB_TOP_PRELOAD_PROGRAM");
+            has_program = $value$plusargs("PROGRAM=%s", prog_file);
+            if (!has_program)
+                has_program = $value$plusargs("HEX=%s", prog_file);
+
+            if (has_program) begin
+                if ($value$plusargs("STARTUP_ADDR=%h", tmp_addr))
+                    load_addr = tmp_addr;
+
+                n_bytes = memory.load_hex_file(prog_file, load_addr);
+                if (n_bytes > 0)
+                    $display("[TB_TOP @ %0t] ✓ Program pre-loaded: %s (%0d bytes @ 0x%h)",
+                             $time, prog_file, n_bytes, load_addr);
+                else
+                    $error("[TB_TOP @ %0t] ✗ Failed to pre-load program: %s", $time, prog_file);
+            end else if (preload_mode) begin
+                $display("[TB_TOP @ %0t] ⚠ TB preload mode enabled but no +PROGRAM/+HEX specified", $time);
+            end
+        end
+
+        begin
             mem_model test_get;
             #1;
             if (uvm_config_db#(mem_model)::get(null, "*", "mem_model", test_get))

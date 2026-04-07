@@ -821,6 +821,7 @@ fi
 
 if [[ -n "$PROGRAM_HEX" ]]; then
     SIM_OPTS="$SIM_OPTS +PROGRAM=$PROGRAM_HEX"
+    SIM_OPTS="$SIM_OPTS +TB_TOP_PRELOAD_PROGRAM"
 fi
 
 
