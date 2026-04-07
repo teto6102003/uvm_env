@@ -61,11 +61,10 @@ $VORTEX_UVM_HOME/uvm_env/agents/host_agent/host_agent.sv
 
 # 7. Ref model
 # $VORTEX_UVM_HOME/uvm_env/ref_model/simx_dpi.cpp
-# $VORTEX_UVM_HOME/uvm_env/ref_model/simx_model.so
+# $VORTEX_UVM_HOME/uvm_env/ref_model/simx_model
 # $VORTEX_UVM_HOME/uvm_env/ref_model/simx_wrapper.sv
-# $VORTEX_UVM_HOME/uvm_env/ref_model/simx_pkg.sv
 
-# 8. Env package (imports only, NO `includes of sv files) 
+# 8. Env package (imports only, NO `includes of sv files)
 $VORTEX_UVM_HOME/uvm_env/vortex_env_pkg.sv
 
 # 9. Env components (standalone, in dependency order)

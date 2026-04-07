@@ -69,12 +69,7 @@ class vortex_smoke_test extends vortex_base_test;
         
         cfg.enable_scoreboard = 1;
         cfg.enable_coverage   = 1;
-        // Enable SimX only if the shared library was actually linked
-        // (controlled by +SIMX plusarg or always-on if .so built)
-        if ($test$plusargs("NO_SIMX"))
-            cfg.simx_enable = 0;
-        else
-            cfg.simx_enable = 1;
+        cfg.simx_enable       = 0;
         // DO NOT override cfg.axi_agent_enable here!
         // apply_plusargs() already set it correctly from +USE_AXI_WRAPPER:
         //   +USE_AXI_WRAPPER present → axi_agent_enable = 1  (AXI path)
@@ -165,7 +160,6 @@ class vortex_smoke_test extends vortex_base_test;
         string hex_file;
         int fd;
         bit found;
-        bit tb_top_preload_mode;
 
         #2ns;  // Wait for tb_top to register mem_model
 
@@ -203,14 +197,7 @@ class vortex_smoke_test extends vortex_base_test;
         end
 
         // Get hex file path from plusarg
-        if (!$value$plusargs("PROGRAM=%s", hex_file) &&
-            !$value$plusargs("HEX=%s", hex_file)) begin
-            tb_top_preload_mode = $test$plusargs("TB_TOP_PRELOAD_PROGRAM");
-            if (tb_top_preload_mode) begin
-                `uvm_info(get_type_name(),
-                    "No +PROGRAM/+HEX in smoke test; relying on TB_TOP pre-load mode", UVM_MEDIUM)
-                return;
-            end
+        if (!$value$plusargs("PROGRAM=%s", hex_file)) begin
             `uvm_fatal(get_type_name(), {
                 "No +PROGRAM specified!\n",
                 "  This test requires a program.\n",

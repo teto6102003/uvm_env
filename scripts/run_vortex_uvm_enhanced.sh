@@ -345,54 +345,25 @@ fi
 # --- Vortex DPI (optional) ---
 VORTEX_DPI_LIB="$FLISTS_DIR/vortex_dpi"
 
-# ── DPI LIBRARY PATHS ────────────────────────────────────────────────────────
+# --- UVM DPI (REQUIRED) ---
 UVM_DPI_LIB="$QUESTA_HOME/uvm-1.2/linux_x86_64/uvm_dpi"
-SIMX_REF_DIR="$PROJECT_ROOT/uvm_env/ref_model"
-SIMX_MODEL_LIB="$SIMX_REF_DIR/simx_model"
 
 DPI_FLAG=""
-SIMX_ENABLED=0
 
-# --- UVM DPI (REQUIRED) ---
+# Add UVM DPI FIRST (critical)
 if [[ -f "${UVM_DPI_LIB}.so" ]]; then
     DPI_FLAG="$DPI_FLAG -sv_lib ${UVM_DPI_LIB}"
-    print_success "UVM DPI: ${UVM_DPI_LIB}.so"
+    print_success "UVM DPI loaded: ${UVM_DPI_LIB}.so"
 else
-    print_error "UVM DPI not found! Simulation will crash."
+    print_error "UVM DPI not found! This WILL crash simulation."
 fi
 
-# --- SimX Golden Model (build if needed) ---
-print_header "SimX Golden Model"
-
-if [[ -z "$VORTEX_HOME" ]]; then
-    print_warning "VORTEX_HOME not set — skipping SimX build"
-elif [[ ! -d "$VORTEX_HOME/sim/simx/obj" ]]; then
-    print_warning "SimX not built (no obj/ in $VORTEX_HOME/sim/simx)"
-    print_info  "Build SimX first: cd \$VORTEX_HOME/sim/simx && make"
+# Add Vortex DPI if exists
+if [[ -f "${VORTEX_DPI_LIB}.so" ]]; then
+    DPI_FLAG="$DPI_FLAG -sv_lib ${VORTEX_DPI_LIB}"
+    print_success "Vortex DPI loaded: ${VORTEX_DPI_LIB}.so"
 else
-    print_info "Building SimX DPI library..."
-    (
-        cd "$SIMX_REF_DIR" || exit 1
-        ARCH_FLAGS="-DNUM_CLUSTERS=${NUM_CLUSTERS} -DNUM_CORES=${NUM_CORES}"
-        ARCH_FLAGS="$ARCH_FLAGS -DNUM_WARPS=${NUM_WARPS} -DNUM_THREADS=${NUM_THREADS}"
-        make build \
-            VORTEX_HOME="$VORTEX_HOME" \
-            QUESTA_HOME="$QUESTA_HOME" \
-            EXTRA_CXXFLAGS="$ARCH_FLAGS" 2>&1
-    )
-    if [[ $? -eq 0 && -f "${SIMX_MODEL_LIB}.so" ]]; then
-        DPI_FLAG="$DPI_FLAG -sv_lib ${SIMX_MODEL_LIB}"
-        SIMX_ENABLED=1
-        print_success "SimX DPI built and linked: simx_model.so"
-    else
-        print_warning "SimX DPI build failed — running without golden model"
-    fi
-fi
-
-# Add NO_SIMX plusarg if SimX not available
-if [[ $SIMX_ENABLED -eq 0 ]]; then
-    SIM_OPTS="$SIM_OPTS +NO_SIMX"
-    print_info "SimX disabled (add +NO_SIMX to suppress this)"
+    print_warning "Vortex DPI not found (optional)"
 fi
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -821,7 +792,6 @@ fi
 
 if [[ -n "$PROGRAM_HEX" ]]; then
     SIM_OPTS="$SIM_OPTS +PROGRAM=$PROGRAM_HEX"
-    SIM_OPTS="$SIM_OPTS +TB_TOP_PRELOAD_PROGRAM"
 fi
 
 
