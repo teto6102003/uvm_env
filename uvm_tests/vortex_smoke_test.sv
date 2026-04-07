@@ -165,6 +165,7 @@ class vortex_smoke_test extends vortex_base_test;
         string hex_file;
         int fd;
         bit found;
+        bit tb_top_preload_mode;
 
         #2ns;  // Wait for tb_top to register mem_model
 
@@ -202,7 +203,14 @@ class vortex_smoke_test extends vortex_base_test;
         end
 
         // Get hex file path from plusarg
-        if (!$value$plusargs("PROGRAM=%s", hex_file)) begin
+        if (!$value$plusargs("PROGRAM=%s", hex_file) &&
+            !$value$plusargs("HEX=%s", hex_file)) begin
+            tb_top_preload_mode = $test$plusargs("TB_TOP_PRELOAD_PROGRAM");
+            if (tb_top_preload_mode) begin
+                `uvm_info(get_type_name(),
+                    "No +PROGRAM/+HEX in smoke test; relying on TB_TOP pre-load mode", UVM_MEDIUM)
+                return;
+            end
             `uvm_fatal(get_type_name(), {
                 "No +PROGRAM specified!\n",
                 "  This test requires a program.\n",
