@@ -46,6 +46,7 @@ package vortex_env_pkg;
   import "DPI-C" function int  simx_load_bin  (string filepath,
                                                longint unsigned load_addr);
   import "DPI-C" function int  simx_load_hex  (string filepath);
+  import "DPI-C" function int  simx_load_hex_at (string filepath, longint unsigned base_addr);
   import "DPI-C" function void simx_dcr_write (int addr, int value);
   import "DPI-C" function int  simx_run       ();
   import "DPI-C" function int  simx_step      (int cycles);

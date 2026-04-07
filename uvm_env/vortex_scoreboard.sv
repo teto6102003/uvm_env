@@ -160,7 +160,7 @@ class vortex_scoreboard extends uvm_scoreboard;
   //==========================================================================
   // Run Phase — initialise SimX and pre-load program
   //==========================================================================
-  virtual task run_phase(uvm_phase phase);
+virtual task run_phase(uvm_phase phase);
     int status;
 
     if (!cfg.simx_enable) begin
@@ -181,39 +181,32 @@ class vortex_scoreboard extends uvm_scoreboard;
     end
     `uvm_info("SCOREBOARD", "SimX initialised successfully", UVM_MEDIUM)
 
-    // Install exit-code bootstrap so x3=0 is guaranteed before main program
-    simx_init_exit_code_register();
-
-        // Pre-load program into SimX RAM (detect format from extension)
+    // ── STEP 1: Load program FIRST ──────────────────────────────────────────
+    // Must happen before bootstrap so the bootstrap DCR write is the LAST one.
     if (cfg.program_path != "") begin
-      string path = cfg.program_path;
-      int    path_len = path.len();
-      bit    is_hex;
-
-      // Detect .hex extension (last 4 chars)
-      is_hex = (path_len > 4) &&
-               (path.substr(path_len-4, path_len-1) == ".hex");
-
-      if (is_hex) begin
-        status = simx_load_hex(cfg.program_path);
-        if (status != 0)
-          `uvm_error("SCOREBOARD",
-            $sformatf("simx_load_hex('%s') failed", cfg.program_path))
-        else
-          `uvm_info("SCOREBOARD",
-            $sformatf("SimX: loaded hex '%s'", cfg.program_path), UVM_MEDIUM)
+      if (cfg.program_type == "hex") begin
+        // Use hex_at to apply startup_addr offset to @00000000 addresses
+        status = simx_load_hex_at(cfg.program_path, 64'(cfg.startup_addr));
       end else begin
         status = simx_load_bin(cfg.program_path, 64'(cfg.startup_addr));
-        if (status != 0)
-          `uvm_error("SCOREBOARD",
-            $sformatf("simx_load_bin('%s') failed", cfg.program_path))
-        else
-          `uvm_info("SCOREBOARD",
-            $sformatf("SimX: loaded bin '%s' @ 0x%0h",
-              cfg.program_path, cfg.startup_addr), UVM_MEDIUM)
       end
+      if (status != 0)
+        `uvm_error("SCOREBOARD",
+          $sformatf("Failed to load program '%s' (type=%s)",
+                    cfg.program_path, cfg.program_type))
+      else
+        `uvm_info("SCOREBOARD",
+          $sformatf("SimX: loaded '%s' @ 0x%0h", cfg.program_path, cfg.startup_addr),
+          UVM_MEDIUM)
     end
-  endtask : run_phase
+
+    // ── STEP 2: Install exit-code bootstrap AFTER program load ───────────────
+    // This sets DCR startup to bootstrap at (startup_addr-16), overriding any
+    // DCR that simx_load_* may have set. Bootstrap sets x3=0 then jumps to
+    // startup_addr so the program always exits with code 0 (unless it sets x3).
+    simx_init_exit_code_register();
+
+endtask : run_phase
 
   //==========================================================================
   // Analysis Write Methods

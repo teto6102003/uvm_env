@@ -287,7 +287,24 @@ endtask
                 -> execution_complete;  // Trigger event (CRITICAL for Option A)
                 
                 // Calculate final IPC
-
+                // ── ADD: broadcast immediately — don't wait for sample_interval ──────
+                begin
+                    status_transaction ebreak_trans;
+                    ebreak_trans = status_transaction::type_id::create("ebreak_trans");
+                    ebreak_trans.busy            = vif.monitor_cb.busy;
+                    ebreak_trans.ebreak_detected = 1'b1;
+                    ebreak_trans.idle            = !vif.monitor_cb.busy;
+                    ebreak_trans.cycle_count     = vif.monitor_cb.cycle_count;
+                    ebreak_trans.instr_count     = vif.monitor_cb.instr_count;
+                    ebreak_trans.pc              = vif.monitor_cb.pc;
+                    ebreak_trans.sample_time     = $time;
+                    ebreak_trans.calculate_metrics();
+                    ap.write(ebreak_trans);
+                    `uvm_info("STATUS_MON",
+                        $sformatf("EBREAK: immediate broadcast to scoreboard @ cycle %0d",
+                                vif.monitor_cb.cycle_count), UVM_LOW)
+                end
+                
                 if (total_execution_cycles > 0) begin
                     final_ipc = real'(total_instructions) / real'(total_execution_cycles);
                 end

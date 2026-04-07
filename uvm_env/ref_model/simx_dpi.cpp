@@ -379,6 +379,69 @@ int simx_load_hex(const char* filepath) {
     return (bytes_loaded > 0) ? 0 : -1;
 }
 
+// Load hex file with base_addr offset applied to @addresses.
+// Handles both byte format (--verilog-data-width=1) and word format.
+// Does NOT change g_startup_addr — caller controls that via bootstrap.
+int simx_load_hex_at(const char* filepath, uint64_t base_addr) {
+    if (!g_initialized || !g_ram) {
+        std::cerr << "[SimX-DPI] Error: SimX not initialized" << std::endl;
+        return -1;
+    }
+
+    std::ifstream file(filepath);
+    if (!file.is_open()) {
+        std::cerr << "[SimX-DPI] Cannot open hex file: " << filepath << std::endl;
+        return -1;
+    }
+
+    std::string line;
+    uint64_t current_addr = base_addr;
+    int bytes_loaded = 0;
+
+    while (std::getline(file, line)) {
+        // Strip CR/LF
+        while (!line.empty() && (line.back() == '\r' || line.back() == '\n'))
+            line.pop_back();
+        if (line.empty() || line[0] == '/' || line[0] == '#') continue;
+
+        if (line[0] == '@') {
+            // Address marker: apply base_addr offset
+            uint64_t rel = std::stoull(line.substr(1), nullptr, 16);
+            current_addr = rel + base_addr;
+            std::cout << "[SimX-DPI] hex_at: @" << std::hex << rel
+                      << " → absolute 0x" << current_addr << std::dec << std::endl;
+            continue;
+        }
+
+        // Parse space-separated tokens (byte or word format)
+        std::istringstream iss(line);
+        std::string tok;
+        while (iss >> tok) {
+            if (tok.size() <= 2) {
+                // Byte format (--verilog-data-width=1)
+                uint8_t b = (uint8_t)std::stoul(tok, nullptr, 16);
+                g_ram->write(&b, current_addr++, 1);
+                bytes_loaded++;
+            } else {
+                // 32-bit word format (little-endian)
+                uint32_t w = (uint32_t)std::stoul(tok, nullptr, 16);
+                uint8_t bytes[4] = {
+                    (uint8_t)(w),       (uint8_t)(w >> 8),
+                    (uint8_t)(w >> 16), (uint8_t)(w >> 24)
+                };
+                g_ram->write(bytes, current_addr, 4);
+                current_addr += 4;
+                bytes_loaded += 4;
+            }
+        }
+    }
+
+    std::cout << "[SimX-DPI] Loaded " << bytes_loaded
+              << " bytes from '" << filepath
+              << "' at base=0x" << std::hex << base_addr << std::dec << std::endl;
+    return 0;
+}
+
 // Load .hex file 
 // int simx_load_hex(const char* filepath) {
 //     if (!g_initialized || !g_ram) {
