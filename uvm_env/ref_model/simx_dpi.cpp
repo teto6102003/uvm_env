@@ -4,6 +4,7 @@
 #include <fstream>
 #include <stdint.h>
 #include <cstring>
+#include <sstream>
 
 // Vortex includes
 #include "processor.h"
@@ -301,7 +302,7 @@ int simx_load_bin(const char* filepath, uint64_t load_addr) {
     }
 }
 
-// Load .hex file 
+// REPLACE the entire simx_load_hex function with this:
 int simx_load_hex(const char* filepath) {
     if (!g_initialized || !g_ram) {
         std::cerr << "[SimX-DPI] Error: not initialized" << std::endl;
@@ -316,43 +317,120 @@ int simx_load_hex(const char* filepath) {
 
     std::string line;
     uint64_t current_addr = 0;
-    int words_loaded = 0;
+    int bytes_loaded = 0;
+    bool format_detected = false;
+    bool is_byte_format  = true;   // objcopy --verilog-data-width=1
+    //to_solve Samual_fatials 
+    static constexpr uint64_t BASE_ADDR_OFFSET = 0x80000000ULL;
 
     while (std::getline(file, line)) {
-        // Trim whitespace
-        while (!line.empty() && isspace(line.front())) line.erase(line.begin());
-        while (!line.empty() && isspace(line.back()))  line.pop_back();
-        if (line.empty()) continue;
+        // Strip CR/LF
+        while (!line.empty() && (line.back() == '\r' || line.back() == '\n'))
+            line.pop_back();
+        if (line.empty() || line[0] == '/' || line[0] == '#') continue;
 
         if (line[0] == '@') {
-            // Address line: @80000000
+            // Address marker
             current_addr = std::stoull(line.substr(1), nullptr, 16);
-            g_startup_addr = current_addr;
-            std::cout << "[SimX-DPI] Hex load address: 0x" 
-                      << std::hex << current_addr << std::dec << std::endl;
-        } else {
-            // Data word (little-endian 32-bit stored as big-endian hex text)
-            uint32_t word = std::stoul(line, nullptr, 16);
-            // Write as little-endian bytes into RAM
-            uint8_t bytes[4];
-            bytes[0] = (word)       & 0xFF;
-            bytes[1] = (word >> 8)  & 0xFF;
-            bytes[2] = (word >> 16) & 0xFF;
-            bytes[3] = (word >> 24) & 0xFF;
-            g_ram->write(bytes, current_addr, 4);
-            current_addr += 4;
-            words_loaded++;
+                // Add base offset
+                current_addr += BASE_ADDR_OFFSET;
+            if (bytes_loaded == 0) g_startup_addr = current_addr;
+            format_detected = false;   // re-detect on next data line
+            continue;
+        }
+
+        // Tokenise on whitespace
+        std::istringstream iss(line);
+        std::string token;
+        bool first_token = true;
+
+        while (iss >> token) {
+            if (first_token && !format_detected) {
+                is_byte_format  = (token.size() <= 2);
+                format_detected = true;
+            }
+            first_token = false;
+
+            if (is_byte_format) {
+                uint8_t b = (uint8_t)std::stoul(token, nullptr, 16);
+                g_ram->write(&b, current_addr++, 1);
+                bytes_loaded++;
+            } else {
+                uint32_t w = std::stoul(token, nullptr, 16);
+                uint8_t bytes[4] = {
+                    (uint8_t)(w),
+                    (uint8_t)(w >> 8),
+                    (uint8_t)(w >> 16),
+                    (uint8_t)(w >> 24)
+                };
+                g_ram->write(bytes, current_addr, 4);
+                current_addr  += 4;
+                bytes_loaded  += 4;
+            }
         }
     }
 
-    std::cout << "[SimX-DPI] Loaded " << words_loaded 
-              << " words from hex file" << std::endl;
-    
-    // Set DCR startup address
-    g_processor->dcr_write(VX_DCR_BASE_STARTUP_ADDR0, 
-                            g_startup_addr & 0xFFFFFFFF);
-    return 0;
+    std::cout << "[SimX-DPI] Loaded " << bytes_loaded
+              << " bytes from hex '" << filepath
+              << "' startup=0x" << std::hex << g_startup_addr << std::dec << std::endl;
+
+    // Apply startup address to DCR
+    g_processor->dcr_write(VX_DCR_BASE_STARTUP_ADDR0, g_startup_addr & 0xFFFFFFFF);
+    return (bytes_loaded > 0) ? 0 : -1;
 }
+
+// Load .hex file 
+// int simx_load_hex(const char* filepath) {
+//     if (!g_initialized || !g_ram) {
+//         std::cerr << "[SimX-DPI] Error: not initialized" << std::endl;
+//         return -1;
+//     }
+
+//     std::ifstream file(filepath);
+//     if (!file.is_open()) {
+//         std::cerr << "[SimX-DPI] Cannot open hex file: " << filepath << std::endl;
+//         return -1;
+//     }
+
+//     std::string line;
+//     uint64_t current_addr = 0;
+//     int words_loaded = 0;
+
+//     while (std::getline(file, line)) {
+//         // Trim whitespace
+//         while (!line.empty() && isspace(line.front())) line.erase(line.begin());
+//         while (!line.empty() && isspace(line.back()))  line.pop_back();
+//         if (line.empty()) continue;
+
+//         if (line[0] == '@') {
+//             // Address line: @80000000
+//             current_addr = std::stoull(line.substr(1), nullptr, 16);
+//             g_startup_addr = current_addr;
+//             std::cout << "[SimX-DPI] Hex load address: 0x" 
+//                       << std::hex << current_addr << std::dec << std::endl;
+//         } else {
+//             // Data word (little-endian 32-bit stored as big-endian hex text)
+//             uint32_t word = std::stoul(line, nullptr, 16);
+//             // Write as little-endian bytes into RAM
+//             uint8_t bytes[4];
+//             bytes[0] = (word)       & 0xFF;
+//             bytes[1] = (word >> 8)  & 0xFF;
+//             bytes[2] = (word >> 16) & 0xFF;
+//             bytes[3] = (word >> 24) & 0xFF;
+//             g_ram->write(bytes, current_addr, 4);
+//             current_addr += 4;
+//             words_loaded++;
+//         }
+//     }
+
+//     std::cout << "[SimX-DPI] Loaded " << words_loaded 
+//               << " words from hex file" << std::endl;
+    
+//     // Set DCR startup address
+//     g_processor->dcr_write(VX_DCR_BASE_STARTUP_ADDR0, 
+//                             g_startup_addr & 0xFFFFFFFF);
+//     return 0;
+// }
 
 // Write memory from SystemVerilog byte array
 void simx_write_mem(uint64_t addr, int size, const svOpenArrayHandle data) {

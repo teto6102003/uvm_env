@@ -69,7 +69,12 @@ class vortex_smoke_test extends vortex_base_test;
         
         cfg.enable_scoreboard = 1;
         cfg.enable_coverage   = 1;
-        cfg.simx_enable       = 0;
+        // Enable SimX only if the shared library was actually linked
+        // (controlled by +SIMX plusarg or always-on if .so built)
+        if ($test$plusargs("NO_SIMX"))
+            cfg.simx_enable = 0;
+        else
+            cfg.simx_enable = 1;
         // DO NOT override cfg.axi_agent_enable here!
         // apply_plusargs() already set it correctly from +USE_AXI_WRAPPER:
         //   +USE_AXI_WRAPPER present → axi_agent_enable = 1  (AXI path)

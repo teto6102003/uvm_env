@@ -184,16 +184,34 @@ class vortex_scoreboard extends uvm_scoreboard;
     // Install exit-code bootstrap so x3=0 is guaranteed before main program
     simx_init_exit_code_register();
 
-    // Pre-load program into SimX RAM (mirrors what +PROGRAM does in the RTL TB)
+        // Pre-load program into SimX RAM (detect format from extension)
     if (cfg.program_path != "") begin
-      status = simx_load_bin(cfg.program_path, 64'(cfg.startup_addr));
-      if (status != 0)
-        `uvm_error("SCOREBOARD",
-          $sformatf("simx_load_bin('%s') failed", cfg.program_path))
-      else
-        `uvm_info("SCOREBOARD",
-          $sformatf("SimX: loaded '%s' @ 0x%0h", cfg.program_path, cfg.startup_addr),
-          UVM_MEDIUM)
+      string path = cfg.program_path;
+      int    path_len = path.len();
+      bit    is_hex;
+
+      // Detect .hex extension (last 4 chars)
+      is_hex = (path_len > 4) &&
+               (path.substr(path_len-4, path_len-1) == ".hex");
+
+      if (is_hex) begin
+        status = simx_load_hex(cfg.program_path);
+        if (status != 0)
+          `uvm_error("SCOREBOARD",
+            $sformatf("simx_load_hex('%s') failed", cfg.program_path))
+        else
+          `uvm_info("SCOREBOARD",
+            $sformatf("SimX: loaded hex '%s'", cfg.program_path), UVM_MEDIUM)
+      end else begin
+        status = simx_load_bin(cfg.program_path, 64'(cfg.startup_addr));
+        if (status != 0)
+          `uvm_error("SCOREBOARD",
+            $sformatf("simx_load_bin('%s') failed", cfg.program_path))
+        else
+          `uvm_info("SCOREBOARD",
+            $sformatf("SimX: loaded bin '%s' @ 0x%0h",
+              cfg.program_path, cfg.startup_addr), UVM_MEDIUM)
+      end
     end
   endtask : run_phase
 
@@ -208,15 +226,12 @@ class vortex_scoreboard extends uvm_scoreboard;
                 tr.rw ? "WR":"RD", tr.addr, tr.byteen, tr.tag), UVM_DEBUG)
 
     if (tr.rw) begin
-      shadow_memory[tr.addr] = tr.data;
-      if (cfg.simx_enable) begin
-        byte unsigned wr[];  wr = new[8];
-        for (int i = 0; i < 8; i++) wr[i] = tr.data[i*8 +: 8];
-        simx_write_mem(64'(tr.addr), 8, wr);
-      end
+      shadow_memory[tr.addr] = tr.data;   // DUT shadow only — SimX runs independently
     end else begin
-      if (tr.completed) compare_mem_transaction(tr);
-      else              mem_pending_q.push_back(tr);
+      if (tr.completed) 
+        compare_mem_transaction(tr);
+      else            
+        mem_pending_q.push_back(tr);
     end
   endfunction : write_mem
 
@@ -232,11 +247,11 @@ class vortex_scoreboard extends uvm_scoreboard;
         bit [63:0] baddr = tr.get_next_addr(beat);
         bit [63:0] bdata = (beat < tr.wdata.size()) ? tr.wdata[beat] : '0;
         shadow_memory[baddr[31:0]] = bdata;
-        if (cfg.simx_enable) begin
-          byte unsigned wr[];  wr = new[8];
-          for (int i = 0; i < 8; i++) wr[i] = bdata[i*8 +: 8];
-          simx_write_mem(baddr, 8, wr);
-        end
+        // if (cfg.simx_enable) begin
+        //   byte unsigned wr[];  wr = new[8];
+        //   for (int i = 0; i < 8; i++) wr[i] = bdata[i*8 +: 8];
+        //   simx_write_mem(baddr, 8, wr);
+        // end
       end
     end else begin
       if (tr.completed) compare_axi_transaction(tr);
